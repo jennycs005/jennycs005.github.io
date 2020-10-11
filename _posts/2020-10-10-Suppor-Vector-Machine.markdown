@@ -13,9 +13,11 @@ tags:
 
 #> “Yeah It's on. ”
 
-Support Vector Machine(SVM) is a supervised machine learning algorithm and it can be used for both classification and regression challenges. However, it is mostly used in classification problems. SVM is highly preferred by many as it produces significant accuracy with less computation power. The basic idea of SVM is to find the optimal separating hyperplane in feature space which maximizes the margin and then categorize training data set into different groups. It can also be considered as a convex quadratic programming problem.
+**Support Vector Machine (SVM)** is a supervised machine learning algorithm and it can be used for both classification and regression challenges. However, it is mostly used in classification problems. SVM is highly preferred by many as it produces significant accuracy with less computation power. The basic idea of SVM is to find the optimal separating hyperplane in feature space which maximizes the margin and then categorize training data set into different groups. It can also be considered as a convex quadratic programming problem.
 
 There are three different cases of SVM learning algorithms we are going to talk about, linear SVM in both linearly separable and nonseparable cases, and non-linear SVM. 
+
+Let’s explain the algorithm briefly. As we can see in the left picture, we take 2-dimensional feature space for example. We have features X1 and X2, and obviously the data can be categorized into 2 groups. But there are many hyperplanes to separate them. So which one is the optimal hyperplane? We want to choose the one with the best generalization ability. In other words, we choose the one with the largest margin. What is the margin? It’s the distance between the closest points from different classes in feature space, and we name the closest points as Support Vectors. Those are the actual data records that determine the hyperplane. That’s because the larger the gap or the margin between two classes, the more confidence the classifier will have.
 
 
 
