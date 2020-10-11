@@ -4,7 +4,7 @@ title:      "Support Vector Machine"
 subtitle:   " A Supervised Machine Learning Algorithm"
 date:       2020-10-10 12:00:00
 author:     "Jennycs005"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/post-bg-SVM-background.jpg"
 catalog: true
 tags:
     - ML
