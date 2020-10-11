@@ -11,7 +11,12 @@ tags:
     - SVM
 ---
 
-> “Yeah It's on. ”
+#> “Yeah It's on. ”
+
+Support Vector Machine(SVM) is a supervised machine learning algorithm and it can be used for both classification and regression challenges. However, it is mostly used in classification problems. SVM is highly preferred by many as it produces significant accuracy with less computation power. The basic idea of SVM is to find the optimal separating hyperplane in feature space which maximizes the margin and then categorize training data set into different groups. It can also be considered as a convex quadratic programming problem.
+
+There are three different cases of SVM learning algorithms we are going to talk about, linear SVM in both linearly separable and nonseparable cases, and non-linear SVM. 
+
 
 
 Hux 的 Blog 就这么开通了。
