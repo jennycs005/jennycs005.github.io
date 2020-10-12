@@ -19,10 +19,14 @@ tags:
 
 ![img](/img/in-post/post-2020-10-10-SVM/post-SVM-01.png)
 
+We take 2-dimensional feature space for example. In the figure above, we have feature X1 and feature X2, and now we want to classify all input data into two groups. It's very obviously that we can simply draw a line to seperate them, and define the line as **Hyperplane**, but there are many hyperplanes could do the job. 
+So which one is the optimal hyperplane? 
+The idea is to choose the one with the best generalization ability. In other words, we choose the one with the **largest margin**. What is the margin? It’s the distance between the closest points from different classes in feature space, and we name the closest points as **Support Vectors**. Those are the actual data records that determine the hyperplane. That’s because the larger the gap or the margin between two classes, the more confidence the classifier will have.
+
+
 There are three different cases of SVM learning algorithms we are going to talk about, linear SVM in both linearly separable and nonseparable cases, and non-linear SVM. 
 
-Let’s explain the algorithm briefly. As we can see in the left picture, we take 2-dimensional feature space for example. We have features X1 and X2, and obviously the data can be categorized into 2 groups. But there are many hyperplanes to separate them. So which one is the optimal hyperplane? We want to choose the one with the best generalization ability. In other words, we choose the one with the largest margin. What is the margin? It’s the distance between the closest points from different classes in feature space, and we name the closest points as Support Vectors. Those are the actual data records that determine the hyperplane. That’s because the larger the gap or the margin between two classes, the more confidence the classifier will have.
-
+Let’s explain the algorithm briefly. 
 
 
 
@@ -31,9 +35,7 @@ Let’s explain the algorithm briefly. As we can see in the left picture, we tak
 
 <p id = "build"></p>
 
-## 正文
-
-接下来说说搭建这个博客的技术细节。  
+ 
 
 正好之前就有关注过 [GitHub Pages](https://pages.github.com/) + [Jekyll](http://jekyllrb.com/) 快速 Building Blog 的技术方案，非常轻松时尚。
 
