@@ -20,7 +20,9 @@ tags:
 ![img](/img/in-post/post-2020-10-10-SVM/post-SVM-01.png)
 
 We take 2-dimensional feature space for example. In the figure above, we have feature X1 and feature X2, and now we want to classify all input data into two groups. It's very obviously that we can simply draw a line to seperate them, and define the line as **Hyperplane**, but there are many hyperplanes could do the job. 
+
 So which one is the optimal hyperplane? 
+
 The idea is to choose the one with the best generalization ability. In other words, we choose the one with the **largest margin**. What is the margin? It’s the distance between the closest points from different classes in feature space, and we name the closest points as **Support Vectors**. Those are the actual data records that determine the hyperplane. That’s because the larger the gap or the margin between two classes, the more confidence the classifier will have.
 
 
