@@ -1,18 +1,22 @@
 ---
 layout:     post
 title:      "Support Vector Machine"
-subtitle:   " A Supervised Machine Learning Algorithm"
+subtitle:   "One of the Most Popular Supervised ML Classifier"
 date:       2020-10-10 12:00:00
 author:     "Jennycs005"
 header-img: "img/post-bg-SVM-background.jpg"
 catalog: true
 tags:
     - ML
+    - Classification
     - SVM
 ---
 
+## Introduction
 
-**Support Vector Machine (SVM)** is a supervised machine learning algorithm and it can be used for both classification and regression challenges. However, it is mostly used in classification problems. SVM is highly preferred by many as it produces significant accuracy with less computation power. The basic idea of SVM is to find the optimal separating hyperplane in feature space which maximizes the margin and then categorize training data set into different groups. It can also be considered as a convex quadratic programming problem.
+**Support Vector Machine (SVM)** is a supervised machine learning algorithm and it can be used for both classification and regression challenges. However, it is mostly used in classification problems. SVM is highly preferred by many as it produces significant accuracy with less computation power. The basic idea of SVM is to find the optimal separating hyperplane in feature space which maximizes the margin and then categorize training data set into different groups. It can also be considered as a convex quadratic programming problem. Let's start with an example to illustrate what it is and how it works.
+
+
 
 There are three different cases of SVM learning algorithms we are going to talk about, linear SVM in both linearly separable and nonseparable cases, and non-linear SVM. 
 
