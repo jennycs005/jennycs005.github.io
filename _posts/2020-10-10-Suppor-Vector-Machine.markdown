@@ -1,3 +1,15 @@
+<head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+
 ---
 layout:     post
 title:      "Support Vector Machine"
@@ -17,21 +29,22 @@ tags:
 **Support Vector Machine (SVM)** is a supervised machine learning algorithm and it can be used for both classification and regression challenges. However, it is mostly used in classification problems. SVM is highly preferred by many as it produces significant accuracy with less computation power. The basic idea of SVM is to find the optimal separating hyperplane in feature space which maximizes the margin and then categorize training data set into different groups. It can also be considered as a convex quadratic programming problem. Let's get started with an example to illustrate what it is and how it works.
 
 
+## Linear SVM
 ![img](/img/in-post/post-2020-10-10-SVM/post-SVM-01.png)
 
-We take 2-dimensional feature space for example. In the figure above, we have feature X1 and feature X2, and now we want to classify all input data into two groups. It's very obviously that we can simply draw a line to seperate them, and define the line as **Hyperplane**, but there are many hyperplanes could do the job. 
+We take 2-dimensional feature space for example. In the figure above, we have feature X1 and feature X2, and now we want to classify the input data into two groups(Of course SVM is capable of milti-class classification, we'll talk about this in another post). It's very obviously that we can simply draw a line to seperate them, and define the line as Hyperplane, but it looks like there are many hyperplanes could be drawn. 
 
-So which one is the optimal hyperplane? 
+So which one is the **optimal hyperplane**? 
 
-The idea is to choose the one with the best generalization ability. In other words, we choose the one with the **largest margin**. What is the margin? It’s the distance between the closest points from different classes in feature space, and we name the closest points as **Support Vectors**. Those are the actual data records that determine the hyperplane. That’s because the larger the gap or the margin between two classes, the more confidence the classifier will have.
+The idea is to choose the one with the best generalization ability. In other words, we choose the one with the **largest margin**. The larger the margin is, the more confidence the classifier will have.
 
+So What is 'margin'? It’s the distance between the closest points from different classes in feature space, and we name the closest points as **Support Vectors**. Those are the actual data records that determine the hyperplane. 
 
-There are three different cases of SVM learning algorithms we are going to talk about, linear SVM in both linearly separable and nonseparable cases, and non-linear SVM. 
-
+We define $f(x)=wx+b$
 Let’s explain the algorithm briefly. 
 
 
-
+## Non-Linear SVM
 [跳过废话，直接看技术实现 ](#build) 
 
 
