@@ -26,13 +26,13 @@ tags:
 
 ## Introduction
 
-**Support Vector Machine (SVM)** is a supervised machine learning algorithm and it can be used for both classification and regression challenges. However, it is mostly used in classification problems. SVM is highly preferred by many as it produces significant accuracy with less computation power. The basic idea of SVM is to find the optimal separating hyperplane in feature space which maximizes the margin and then categorize training data set into different groups. It can also be considered as a convex quadratic programming problem. Let's get started with an example to illustrate what it is and how it works.
+**Support Vector Machine (SVM)** is a supervised machine learning algorithm and it can be used for both classification and regression challenges. However, it is mostly used in classification problems. SVM is highly preferred by many as it produces significant accuracy with less computation power. The basic idea of SVM is to find the optimal separating hyperplane in feature space which maximizes the margin and then categorize training data set into different groups. It can also be considered as a convex quadratic programming problem. We're going to discuss both linear and non-linear SVM.
 
 
 ## Linear SVM
 ![img](/img/in-post/post-2020-10-10-SVM/post-SVM-01.png)
 
-We take 2-dimensional feature space for example. In the figure above, we have feature X1 and feature X2, and now we want to classify the input data into two groups(Of course SVM is capable of milti-class classification, we'll talk about this in another post). It's very obviously that we can simply draw a line to seperate them, and define the line as Hyperplane, but it looks like there are many hyperplanes could be drawn. 
+We take 2-dimensional feature space for example. In the figure above, we have feature $X_1$ and feature $X_2$, and now we want to classify the input data into two groups(Of course SVM is capable of milti-class classification, we'll talk about this in another post). It's very obviously that we can simply draw a line to seperate them, and define the line as Hyperplane, but it looks like there are many hyperplanes could be drawn. 
 
 So which one is the **optimal hyperplane**? 
 
@@ -40,11 +40,14 @@ The idea is to choose the one with the best generalization ability. In other wor
 
 So What is 'margin'? It’s the distance between the closest points from different classes in feature space, and we name the closest points as **Support Vectors**. Those are the actual data records that determine the hyperplane. 
 
-We define $f(x)=wx+b$
+We define the hyperplane as $f(x)=wx+b$. when $f(x)=0$, it means x is on the hyperplane; when $f(x)>0$, the $x$ is on the positive category; when $f(x)<0$, x is on the negative category.
+
 Let’s explain the algorithm briefly. 
 
 
 ## Non-Linear SVM
+
+
 [跳过废话，直接看技术实现 ](#build) 
 
 
@@ -84,13 +87,6 @@ Theme 的 CSS 是基于 Bootstrap 定制的，看得不爽的地方直接在 Les
 第二天考虑中文字体的渲染，fork 了 [Type is Beautiful](http://www.typeisbeautiful.com/) 的 `font` CSS，调整了字号，适配了 Win 的渣渲染，中英文混排效果好多了。
 
 
-## 后记
-
-回顾这个博客的诞生，纯粹是出于个人兴趣。在知乎相关问题上回答并获得一定的 star 后，我决定把这个博客主题当作一个小小的开源项目来维护。
-
-在经历 v1.0 - v1.5 的蜕变后，这个博客主题愈发完整，不但增加了诸多 UI 层的优化（opinionated）；在代码层面，更加丰富的配置项也使得这个主题拥有了更好的灵活性与可拓展性。而作为一个开源项目，我也积极的为其完善文档与解决 issue。
-
-如果你恰好逛到了这里，希望你也能喜欢这个博客主题。
 
 —— Jennycs005 @ 10102020
 
