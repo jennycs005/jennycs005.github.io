@@ -32,7 +32,7 @@ tags:
 ## Linear SVM
 ![img](/img/in-post/post-2020-10-10-SVM/post-SVM-01.png)
 
-We take 2-dimensional feature space for example. In the figure above, we have feature $X_1$ and feature $X_2$, and now we want to classify the input data into two groups(Of course SVM is capable of milti-class classification, we'll talk about this in another post). It's very obviously that we can simply draw a line to seperate them, and define the line as Hyperplane, but it looks like there are many hyperplanes could be drawn. 
+We take 2-dimensional feature space for example. In the figure above, we have feature $X_1$ and feature $X_2$, and now we want to classify the input data into two groups(Of course SVM is capable of milti-class classification, we'll talk about this in another post). It's very obviously that we can simply draw a line to seperate them, and define the line as 'hyperplane', but it looks like there are many hyperplanes could be drawn. 
 
 So which one is the **optimal hyperplane**? 
 
@@ -40,7 +40,11 @@ The idea is to choose the one with the best generalization ability. In other wor
 
 So What is 'margin'? It’s the distance between the closest points from different classes in feature space, and we name the closest points as **Support Vectors**. Those are the actual data records that determine the hyperplane. 
 
-We define the hyperplane as $f(x)=wx+b$. when $f(x)=0$, it means x is on the hyperplane; when $f(x)>0$, the $x$ is on the positive category; when $f(x)<0$, x is on the negative category.
+![img](/img/in-post/post-2020-10-10-SVM/post-SVM-02.png)
+
+We define the hyperplane as $f(x)=wx+b$. when $f(x)=0$, it means x is on the hyperplane; when $f(x)>0$, the $x$ is on the positive category, $f(x)=1$; when $f(x)<0$, $x$ is on the negative category, $f(x)=-1$.
+
+
 
 Let’s explain the algorithm briefly. 
 
