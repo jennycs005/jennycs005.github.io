@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Support Vector Machine"
-subtitle:   "One of the Most Popular Supervised ML Classifier"
+subtitle:   "Trying so hard to find the largest margin"
 date:       2020-10-10 12:00:00
 author:     "Jennycs005"
 header-img: "img/post-bg-SVM-background.jpg"
@@ -38,11 +38,16 @@ So which one is the **optimal hyperplane**?
 
 The idea is to choose the one with the best generalization ability. In other words, we choose the one with the **largest margin**. The larger the margin is, the more confidence the classifier will have.
 
-So What is 'margin'? It’s the distance between the closest points from different classes in feature space, and we name the closest points as **Support Vectors**(Marked as red and green spots). Those are the actual data records that determine the hyperplane. 
+So What is 'margin'? It’s the distance between the closest points from different classes in feature space( the distance between red line and green line in the figure below). We name the closest points as **Support Vectors**( Marked as red and green spots). Those are the actual data records that determine the hyperplane. 
 
 ![img](/img/in-post/post-2020-10-10-SVM/post-SVM-02.png)
 
-We define the hyperplane as $f(x)=wx+b$. when $f(x)=0$, it means x is on the hyperplane; when $f(x)>0$, the $x$ is on the positive category, $f(x)=1$; when $f(x)<0$, $x$ is on the negative category, $f(x)=-1$.
+Let's discuss it in depth. We define the hyperplane as $f(x)=wx+b$. when $f(x)=0$, it means $x$ is exactly on the hyperplane; when $f(x)>0$, then $x$ is on the positive category, $f(x)=1$; when $f(x)<0$, $x$ is on the negative category, $f(x)=-1$. 
+
+For any point in feature space, the distance to the hyperplane $r$ can be write as:
+$r = 
+
+
 
 
 
