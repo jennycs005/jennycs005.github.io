@@ -38,7 +38,7 @@ So which one is the **optimal hyperplane**?
 
 The idea is to choose the one with the best generalization ability. In other words, we choose the one with the **largest margin**. The larger the margin is, the more confidence the classifier will have.
 
-So What is 'margin'? It’s the distance between the closest points from different classes in feature space, and we name the closest points as **Support Vectors**(Marked as red and green pots). Those are the actual data records that determine the hyperplane. 
+So What is 'margin'? It’s the distance between the closest points from different classes in feature space, and we name the closest points as **Support Vectors**(Marked as red and green spots). Those are the actual data records that determine the hyperplane. 
 
 ![img](/img/in-post/post-2020-10-10-SVM/post-SVM-02.png)
 
