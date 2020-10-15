@@ -42,10 +42,10 @@ So What is 'margin'? It’s the distance between the closest points from differe
 
 ![img](/img/in-post/post-2020-10-10-SVM/post-SVM-02.png)
 
-Let's discuss it in depth. We define the hyperplane as $f(x)=wx+b$. when $f(x)=0$, it means $x$ is exactly on the hyperplane; when $f(x)>0$, then $x$ is on the positive category, $f(x)=1$; when $f(x)<0$, $x$ is on the negative category, $f(x)=-1$. 
+Let's discuss it in depth. We define the hyperplane as $f(x)=wx+b$. when $f(x)=0$, it means $x$ is exactly on the hyperplane; when $f(x)>0$, then $x$ is on the positive category, where $f(x)=1$; when $f(x)<0$, $x$ is on the negative category, where $f(x)=-1$. 
 
 For any point in feature space, the distance to the hyperplane $r$ can be write as:
-$r = 
+$r = $
 
 
 
