@@ -48,22 +48,8 @@ Let's discuss it in depth. We define the hyperplane as $f(x)=wx+b$. when $f(x)=0
 
 For any point $(x_i, y_i)$ in feature space, $\lvert w{x_i}+b\rvert$ is the distance from $x_i$ to the hyperplane. Let's consider the sign of $y_i(w{x_i}+b)$, if it's positive, that means the point $(x_i, y_i)$ is properly classifed. $γ = y_i(w{x_i}+b)$ is called the **functional margin**, it's just a testing function that tell us whether the point is properly classified or not. The smallest $γ$ is the largest margin.
 
-Scalling functional margin by $\lVert w \rVert$, we got **geometrical margin** $γ = y_i(\frac{w}{\lVert w \rVert}x_i+\frac{b}{\lVert w \rVert})$. to the hyperplane $γ$ can be write as:
+Scalling functional margin by $\lVert w \rVert$, we got **geometrical margin** $γ = y_i(\frac{w}{\lVert w \rVert}x_i+\frac{b}{\lVert w \rVert})$. The geometric margin is showing not only if the point is properly classified or not, but also the magnitude of that distance in term of units of $\lVert w \rVert$.
 
-
- The geometric margin is just a scaled version of the functional margin.
-
-You can think the functional margin, just as a testing function that will tell you whether a particular point is properly classified or not. And the geometric margin is functional margin scaled by ||w||
-
-If you check the formula:
-
-enter image description here
-
-You can notice that independently of the label, the result would be positive for properly classified points (e.g sig(1*5)=1 and sig(-1*-5)=1) and negative otherwise. If you scale that by ||w|| then you will have the geometric margin.
-
-Why does the geometric margin exists?
-
-Well to maximize the margin you need more that just the sign, you need to have a notion of magnitude, the functional margin would give you a number but without a reference you can't tell if the point is actually far away or close to the decision plane. The geometric margin is telling you not only if the point is properly classified or not, but the magnitude of that distance in term of units of |w|
 
 
 
