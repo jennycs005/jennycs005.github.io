@@ -38,16 +38,30 @@ So which one is the **optimal hyperplane**?
 
 The idea is to choose the one with the **largest margin**. In other words, we choose the one with the best generalization ability. The larger the margin is, the more confidence the classifier will have.
 
-So What is 'margin'? It’s the distance between the closest points from different classes in feature space( the distance between red line and green line in the figure below). We name the closest points as **Support Vectors**( Marked as red and green spots). Those are the actual data records that determine the hyperplane. 
+So What is 'margin'? 
+
+It’s the distance between the closest points from different classes in feature space( the distance between red line and green line in the figure below). We name the closest points as **Support Vectors**( Marked as red and green spots). Those are the actual data records that determine the hyperplane. 
 
 ![img](/img/in-post/post-2020-10-10-SVM/post-SVM-02.png)
 
 Let's discuss it in depth. We define the hyperplane as $f(x)=wx+b$. when $f(x)=0$, it means $x$ is exactly on the hyperplane; when $f(x)>0$, then $x$ is on the positive category, where $f(x)=1$; when $f(x)<0$, $x$ is on the negative category, where $f(x)=-1$. 
 
-For any point in feature space, the distance to the hyperplane $γ$ can be write as:
+For any point $(x_i, y_i)$ in feature space, the $|wx_i+b|$ is the distance from $x_i$ to the hyperplane. Let's consider the sign of $y_i(wx_i+b)$, if it's positive, that means the point $(x_i, y_i)$ is properly classifed. $γ = y_i(wx_i+b)$ is called the **functional margin**. Scal functional margin by $||w||$, we got **geometrical margin**. to the hyperplane $γ$ can be write as:
 $γ = $
 
+ The geometric margin is just a scaled version of the functional margin.
 
+You can think the functional margin, just as a testing function that will tell you whether a particular point is properly classified or not. And the geometric margin is functional margin scaled by ||w||
+
+If you check the formula:
+
+enter image description here
+
+You can notice that independently of the label, the result would be positive for properly classified points (e.g sig(1*5)=1 and sig(-1*-5)=1) and negative otherwise. If you scale that by ||w|| then you will have the geometric margin.
+
+Why does the geometric margin exists?
+
+Well to maximize the margin you need more that just the sign, you need to have a notion of magnitude, the functional margin would give you a number but without a reference you can't tell if the point is actually far away or close to the decision plane. The geometric margin is telling you not only if the point is properly classified or not, but the magnitude of that distance in term of units of |w|
 
 
 
