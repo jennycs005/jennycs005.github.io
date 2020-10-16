@@ -48,7 +48,7 @@ Let's discuss it in depth. We define the hyperplane as $f(x)=wx+b$. when $f(x)=0
 
 For any point $(x_i, y_i)$ in feature space, 
 
-Scalling functional margin by $\||w\||$, we got **geometrical margin** . to the hyperplane $γ$ can be write as:
+Scalling functional margin by $\lVert w \rVert$, we got **geometrical margin** . to the hyperplane $γ$ can be write as:
 
 
  The geometric margin is just a scaled version of the functional margin.
