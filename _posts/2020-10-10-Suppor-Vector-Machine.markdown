@@ -50,6 +50,10 @@ For any point $(x_i, y_i)$ in feature space, $\lvert w{x_i}+b\rvert$ is the dist
 
 Scalling functional margin by $\lVert w \rVert$, we got **geometrical margin** $γ = y_i(\frac{w}{\lVert w \rVert}x_i+\frac{b}{\lVert w \rVert})$. The geometric margin is showing not only if the point is properly classified or not, but also the magnitude of that distance in term of units of $\lVert w \rVert$.
 
+That lead to our algorithm of SVM, we are looking for 
+
+$Max_{w,b} γ $
+
 
 
 
