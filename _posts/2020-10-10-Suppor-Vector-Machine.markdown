@@ -46,8 +46,10 @@ It’s the distance between the closest points from different classes in feature
 
 Let's discuss it in depth. We define the hyperplane as $f(x)=wx+b$. when $f(x)=0$, it means $x$ is exactly on the hyperplane; when $f(x)>0$, then $x$ is on the positive category, where $f(x)=1$; when $f(x)<0$, $x$ is on the negative category, where $f(x)=-1$. 
 
-For any point $(x_i, y_i)$ in feature space, the $|wx_i+b|$ is the distance from $x_i$ to the hyperplane. Let's consider the sign of $y_i(wx_i+b)$, if it's positive, that means the point $(x_i, y_i)$ is properly classifed. $γ = y_i(wx_i+b)$ is called the **functional margin**. Scal functional margin by $||w||$, we got **geometrical margin**. to the hyperplane $γ$ can be write as:
-$γ = $
+For any point $(x_i, y_i)$ in feature space, $|wx_i+b|$ is the distance from $x_i$ to the hyperplane. Let's consider the sign of $y_i(wx_i+b)$, if it's positive, that means the point $(x_i, y_i)$ is properly classifed. $γ = y_i(wx_i+b)$ is called the **functional margin**, it's just a testing function that tell us whether the point is properly classified or not. The smallest $γ$ is the largest margin.
+
+Scalling functional margin by $||w||$, we got **geometrical margin** $γ = y_i(\frac{w}{||w||}x_i+\frac{b}{||w||})$. to the hyperplane $γ$ can be write as:
+
 
  The geometric margin is just a scaled version of the functional margin.
 
