@@ -52,7 +52,9 @@ Scalling functional margin by $\lVert w \rVert$, we got **geometrical margin** $
 
 That lead to our algorithm of SVM, we are looking for 
 
-$Max_{w,b} γ $
+$max_{w,b} γ $
+
+$s. t.$
 
 
 
