@@ -26,7 +26,7 @@ tags:
 
 ## Introduction
 
-**Support Vector Machine (SVM)** is a supervised machine learning algorithm and it can be used for both classification and regression challenges. However, it is mostly used in classification problems. SVM is highly preferred by many as it produces significant accuracy with less computation power. The basic idea of SVM is to find the optimal separating hyperplane in feature space which maximizes the margin and then categorize training data set into different groups. It can also be considered as a convex quadratic programming problem. We're going to discuss both linear and non-linear SVM.
+**Support Vector Machine (SVM)** is a supervised machine learning algorithm and it can be used for both classification and regression challenges. However, it is mostly used in classification problems. SVM is highly preferred by many as it produces significant accuracy with less computation power. The basic idea of SVM is to find the optimal separating hyperplane in feature space which maximizes the margin and then categorize training data set into different groups. It can also be considered as a convex quadratic programming problem. We're going to discuss both linear and non-linear SVM in this post.
 
 
 ## Linear SVM
@@ -36,7 +36,7 @@ We take 2-dimensional feature space for example. In the figure above, we have fe
 
 So which one is the **optimal hyperplane**? 
 
-The idea is to choose the one with the best generalization ability. In other words, we choose the one with the **largest margin**. The larger the margin is, the more confidence the classifier will have.
+The idea is to choose the one with the **largest margin**. In other words, we choose the one with the best generalization ability. The larger the margin is, the more confidence the classifier will have.
 
 So What is 'margin'? It’s the distance between the closest points from different classes in feature space( the distance between red line and green line in the figure below). We name the closest points as **Support Vectors**( Marked as red and green spots). Those are the actual data records that determine the hyperplane. 
 
@@ -44,8 +44,8 @@ So What is 'margin'? It’s the distance between the closest points from differe
 
 Let's discuss it in depth. We define the hyperplane as $f(x)=wx+b$. when $f(x)=0$, it means $x$ is exactly on the hyperplane; when $f(x)>0$, then $x$ is on the positive category, where $f(x)=1$; when $f(x)<0$, $x$ is on the negative category, where $f(x)=-1$. 
 
-For any point in feature space, the distance to the hyperplane $r$ can be write as:
-$r = $
+For any point in feature space, the distance to the hyperplane $γ$ can be write as:
+$γ = $
 
 
 
