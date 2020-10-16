@@ -50,6 +50,7 @@ For any point $(x_i, y_i)$ in feature space, $|wx_i+b|$ is the distance from $x_
 
 Scalling functional margin by $||w||$, we got **geometrical margin** $γ = y_i(frac{w}{||w||}x_i+frac{b}{||w||})$. to the hyperplane $γ$ can be write as:
 
+$γ = y_i(frac{w}{||w||})$
 
  The geometric margin is just a scaled version of the functional margin.
 
