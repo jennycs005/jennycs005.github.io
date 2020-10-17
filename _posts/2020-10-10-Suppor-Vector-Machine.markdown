@@ -56,7 +56,7 @@ $\mathop{max}\limits_{w,b} γ$
 
 $max_{w,b} γ $
 
-$s. t.$
+$s. t. y_i(\frac{w}{\lVert w \rVert}x_i+\frac{b}{\lVert w \rVert}) > γ, i = 1, 2, ..., N$
 
 
 
