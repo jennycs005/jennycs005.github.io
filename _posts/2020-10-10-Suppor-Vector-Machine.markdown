@@ -32,11 +32,11 @@ tags:
 ## Linear SVM
 ![img](/img/in-post/post-2020-10-10-SVM/post-SVM-01.png)
 
-We take 2-dimensional feature space for example. In the figure above, we have feature $X_1$ and feature $X_2$, and now we want to classify the input data into two groups(Of course SVM is capable of milti-class classification, we'll talk about this in another post). It's very obviously that we can simply draw a line to seperate them, and define the line as 'hyperplane', but it looks like there are many hyperplanes could be drawn. 
+We take 2-dimensional feature space for example. In the figure above, we have feature $X_1$ and feature $X_2$, and now we want to classify the input data into two groups(Of course SVM is capable of milti-class classification, we'll talk about this in another post). It's very obviously that we can simply draw a line to seperate them, and define the line as a 'hyperplane', but it looks like there are many hyperplanes could be drawn. 
 
 So which one is the **optimal hyperplane**? 
 
-The idea is to choose the one with the **largest margin**. In other words, we choose the one with the best generalization ability. The larger the margin is, the more confidence the classifier will have.
+The idea is to choose the one with the **largest margin**. The larger the margin is, the more confidence the classifier will have. In other words, we choose the one with the best generalization ability.
 
 So What is 'margin'? 
 
