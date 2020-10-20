@@ -53,9 +53,11 @@ $\mathop{max}\limits_{w,b} γ$
 
 $s. t.  y_i(\frac{w}{\lVert w \rVert}x_i+\frac{b}{\lVert w \rVert}) > γ, i = 1, 2, ..., N$
 
-Since $γ = \frac{\hat γ}{\lVert w \rVert}$ and the value of $\hat γ$ don't have any influence on the final result, and $\mathop{max} \frac{1}{\lVert w \rVert}$ is equal to $\mathop min\frac{1}{2}\lVert w \rVert}$
+Since $γ = \frac{\hat γ}{\lVert w \rVert}$ and the value of $\hat γ$ don't have any influence on the final result, and $\mathop{max} \frac{1}{\lVert w \rVert}$ is equal to $\mathop{min}\frac{1}{2}\lVert w \rVert}$, the furmula could be convert to:
 
+$\mathop{max}\limits_{w,b} γ$
 
+$s. t.  y_i(\frac{w}{\lVert w \rVert}x_i+\frac{b}{\lVert w \rVert}) > γ, i = 1, 2, ..., N$
 
 正好之前就有关注过 [GitHub Pages](https://pages.github.com/) + [Jekyll](http://jekyllrb.com/) 快速 Building Blog 的技术方案，非常轻松时尚。
 
