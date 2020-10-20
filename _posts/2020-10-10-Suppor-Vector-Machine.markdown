@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Support Vector Machine"
-subtitle:   "Trying so hard to find the largest margin"
+title:      "Support Vector Machine 1"
+subtitle:   "Linear SVM -- Trying so hard to find largest margin"
 date:       2020-10-10 12:00:00
 author:     "Jennycs005"
 header-img: "img/post-bg-SVM-background.jpg"
@@ -26,10 +26,9 @@ tags:
 
 ## Introduction
 
-**Support Vector Machine (SVM)** is a supervised machine learning algorithm and it can be used for both classification and regression challenges. However, it is mostly used in classification problems. SVM is highly preferred by many as it produces significant accuracy with less computation power. The basic idea of SVM is to find the optimal separating hyperplane in feature space which maximizes the margin and then categorize training data set into different groups. It can also be considered as a convex quadratic programming problem. We're going to discuss both linear and non-linear SVM in this post.
+**Support Vector Machine (SVM)** is a supervised machine learning algorithm and it can be used for both classification and regression challenges. However, it is mostly used in classification problems. SVM is highly preferred by many as it produces significant accuracy with less computation power. The basic idea of SVM is to find the optimal separating hyperplane in feature space which maximizes the margin and then categorize training data set into different groups. It can also be considered as a convex quadratic programming problem. We're going to discuss linear SVM in this post.
 
-
-## Linear SVM
+## functional margin and geometrical margin
 ![img](/img/in-post/post-2020-10-10-SVM/post-SVM-01.png)
 
 We take 2-dimensional feature space for example. In the figure above, we have feature $X_1$ and feature $X_2$, and now we want to classify the input data into two groups(Of course SVM is capable of milti-class classification, we'll talk about this in another post). It's very obviously that we can simply draw a line to seperate them, and define the line as a 'hyperplane', but it looks like there are many hyperplanes could be drawn. 
@@ -61,23 +60,6 @@ $s. t.  y_i(\frac{w}{\lVert w \rVert}x_i+\frac{b}{\lVert w \rVert}) > γ, i = 1,
 
 
 
-
-
-
-
-Let’s explain the algorithm briefly. 
-
-
-## Non-Linear SVM
-
-
-[跳过废话，直接看技术实现 ](#build) 
-
-
-<p id = "build"></p>
-
- 
-
 正好之前就有关注过 [GitHub Pages](https://pages.github.com/) + [Jekyll](http://jekyllrb.com/) 快速 Building Blog 的技术方案，非常轻松时尚。
 
 其优点非常明显：
@@ -104,11 +86,6 @@ Let’s explain the algorithm briefly.
 本地调试环境需要 `gem install jekyll`，结果 rubygem 的源居然被墙了……后来手动改成了我大淘宝的镜像源才成功
 
 Theme 的 CSS 是基于 Bootstrap 定制的，看得不爽的地方直接在 Less 里改就好了（平时更习惯 SCSS 些），**不过其实我一直觉得 Bootstrap 在移动端的体验做得相当一般，比我在淘宝参与的团队 CSS 框架差多了……**所以为了体验，也补了不少 CSS 进去
-
-最后就进入了耗时反而最长的**做图、写字**阶段，也算是进入了**写博客**的正轨，因为是类似 Hack Day 的方式去搭这个站的，所以折腾折腾着大半夜就过去了。
-
-第二天考虑中文字体的渲染，fork 了 [Type is Beautiful](http://www.typeisbeautiful.com/) 的 `font` CSS，调整了字号，适配了 Win 的渣渲染，中英文混排效果好多了。
-
 
 
 —— Jennycs005 @ 10102020
