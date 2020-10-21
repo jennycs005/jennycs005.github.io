@@ -45,18 +45,18 @@ For any point $(x_i, y_i)$ in feature space, $\lvert w{x_i}+b\rvert$ is the dist
 
 Scalling functional margin by $\lVert w \rVert$, we got **geometric margin** $γ_i = y_i(\frac{w}{\lVert w \rVert}x_i+\frac{b}{\lVert w \rVert})$. The geometric margin is showing not only if the point is properly classified or not, but also the magnitude of that distance in term of units of $\lVert w \rVert$. The smallest geometric margin(this margin is from data points in feature space to separating hyperplane) is half of the largest margin(this margin is the distance between red line and green line) we're looking for.
 
-## Largest Margin
 
-Now let's consider how to get the largest margin. The problem could be descriped as follow:
+To get the largest margin, the problem could be descriped as follow:
 
 $\mathop{max}\limits_{w,b} γ$
 
 $s. t.  y_i(\frac{w}{\lVert w \rVert}x_i+\frac{b}{\lVert w \rVert}) > γ, i = 1, 2, ..., N$
 
 Since 
-* $γ = \frac{\hat γ}{\lVert w \rVert}$ and 
-* the value of $\hat γ$ don't have any influence on the final result, and 
-* $\mathop{max} \frac{1}{\lVert w \rVert}$ is equal to $\mathop{min} \frac{1}{2} \lVert w \rVert$, 
+* $γ = \frac{\hat γ}{\lVert w \rVert}$ 
+* $(λw, λb)$ is the same hyperplane with $(w, b)$, set functional margin $\hat γ = 1$ 
+* $\mathop{max} \frac{1}{\lVert w \rVert}$ is equal to $\mathop{min} \frac{1}{2} \lVert w \rVert$
+
 the furmula could be convert to:
 
 $\mathop{min}\limits_{w,b} \frac{1}{2}{\lVert w \rVert}^2$
