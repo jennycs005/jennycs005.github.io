@@ -39,35 +39,35 @@ The idea is to choose the one with the **largest margin**. The larger the margin
 
 ![img](/img/in-post/post-2020-10-10-SVM/post-SVM-02.png)
 
-Let's discuss it in depth. We define the hyperplane as $f(x)=w^Tx+b$. when $f(x)=0$, it means $x$ is exactly on the hyperplane; when $f(x)>0$, then $x$ is on the positive category, where $f(x)=1$; when $f(x)<0$, $x$ is on the negative category, where $f(x)=-1$. 
+Let's discuss it in depth. We define the hyperplane as $f(x)=ωx+b$. when $f(x)=0$, it means $x$ is exactly on the hyperplane; when $f(x)>0$, then $x$ is on the positive category, where $f(x)=1$; when $f(x)<0$, $x$ is on the negative category, where $f(x)=-1$. 
 
-For any point $(x_i, y_i)$ in feature space, $\lvert w^T{x_i}+b\rvert$ is the distance from $x_i$ to the hyperplane. Let's consider the sign of $y_i(w^T{x_i}+b)$, if it's positive, that means the point $(x_i, y_i)$ is properly classifed. $\hat γ_i = y_i(w^T{x_i}+b)$ is called the **functional margin**, it's just a testing function that tell us whether the point is properly classified or not.
+For any point $(x_i, y_i)$ in feature space, $\lvert ω{x_i}+b\rvert$ is the distance from $x_i$ to the hyperplane. Let's consider the sign of $y_i(ω{x_i}+b)$, if it's positive, that means the point $(x_i, y_i)$ is properly classifed. $\hat γ_i = y_i(ω{x_i}+b)$ is called the **functional margin**, it's just a testing function that tell us whether the point is properly classified or not.
 
-Scalling functional margin by $\lVert w \rVert$, we got **geometric margin** $γ_i = y_i(\frac{w}{\lVert w \rVert}x_i+\frac{b}{\lVert w \rVert})$. The geometric margin is showing not only if the point is properly classified or not, but also the magnitude of that distance in term of units of $\lVert w \rVert$. The smallest geometric margin(this margin is from data points in feature space to separating hyperplane) is half of the largest margin(this margin is the distance between red line and green line) we're looking for.
+Scalling functional margin by $\lVert ω \rVert$, we got **geometric margin** $γ_i = y_i(\frac{ω}{\lVert ω \rVert}x_i+\frac{b}{\lVert ω \rVert})$. The geometric margin is showing not only if the point is properly classified or not, but also the magnitude of that distance in term of units of $\lVert ω \rVert$. The smallest geometric margin(this margin is from data points in feature space to separating hyperplane) is half of the largest margin(this margin is the distance between red line and green line) we're looking for.
 
 
 To get the largest margin, the problem could be descriped as follow:
 
-$\mathop{max}\limits_{w,b} γ$
+$\mathop{max}\limits_{ω,b} γ$
 
-$s. t.  y_i(\frac{w}{\lVert w \rVert}x_i+\frac{b}{\lVert w \rVert}) > γ, i = 1, 2, ..., N$
+$s. t.  y_i(\frac{ω}{\lVert ω \rVert}x_i+\frac{b}{\lVert ω \rVert}) > γ, i = 1, 2, ..., N$
 
 Since 
-* $γ = \frac{\hat γ}{\lVert w \rVert}$ 
-* $(λw, λb)$ is the same hyperplane with $(w, b)$, set functional margin $\hat γ = 1$ 
-* $\mathop{max} \frac{1}{\lVert w \rVert}$ is equal to $\mathop{min} \frac{1}{2} \lVert w \rVert$
+* $γ = \frac{\hat γ}{\lVert ω \rVert}$ 
+* $(λω, λb)$ is the same hyperplane with $(ω, b)$, set functional margin $\hat γ = 1$ 
+* $\mathop{max} \frac{1}{\lVert ω \rVert}$ is equal to $\mathop{min} \frac{1}{2} \lVert ω \rVert$
 
 the furmula could be convert to:
 
-$\mathop{min}\limits_{w,b} \frac{1}{2}{\lVert w \rVert}^2$     (function 1)
+$\mathop{min}\limits_{ω,b} \frac{1}{2}{\lVert ω \rVert}^2$     (function 1)
 
-$s. t.  y_i(\frac{w}{\lVert w \rVert}x_i+\frac{b}{\lVert w \rVert}) - 1> 0, i = 1, 2, ..., N$
+$s. t.  y_i(\frac{ω}{\lVert ω \rVert}x_i+\frac{b}{\lVert ω \rVert}) - 1> 0, i = 1, 2, ..., N$
 
-We got $w^\*, b^\*$ from the function above and have the optimal hyperplane
+We got $ω^\*, b^\*$ from the function above and have the optimal hyperplane
 
-$f(x) = {w^\*}x+{b^\*}$
+$f(x) = {ω^\*}x+{b^\*}$
 
-In linear separable cases, the closest points to separating hyperplane are called **support vectors**. Thoses are the points where $y_i(wx_i+b)-1=0$(red line and green line in the picture). The distance between red line and green line is the margin, which is $\frac{2}{\lVert w \rVert}$. Support Vectors are the only points deciding the optimal separating hyperplane. That means if support vectors are moved, hyperplane is moved; if other points being moved or deleted, hyperplane is not moved. Because of that, SVM could be used on small dataset since only a small part of set is being used.
+In linear separable cases, the closest points to separating hyperplane are called **support vectors**. Thoses are the points where $y_i(ωx_i+b)-1=0$(red line and green line in the picture). The distance between red line and green line is the margin, which is $\frac{2}{\lVert ω \rVert}$. Support Vectors are the only points deciding the optimal separating hyperplane. That means if support vectors are moved, hyperplane is moved; if other points being moved or deleted, hyperplane is not moved. Because of that, SVM could be used on small dataset since only a small part of set is being used.
 
 ## Dual Problem
 
