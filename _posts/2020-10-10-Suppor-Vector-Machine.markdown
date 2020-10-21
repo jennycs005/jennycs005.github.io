@@ -63,9 +63,15 @@ $\mathop{min}\limits_{w,b} \frac{1}{2}{\lVert w \rVert}^2$
 
 $s. t.  y_i(\frac{w}{\lVert w \rVert}x_i+\frac{b}{\lVert w \rVert}) - 1> 0, i = 1, 2, ..., N$
 
-We got $w^*, b^*$ from the function above and have the optimal hyperplane
+We got $w^\*, b^\*$ from the function above and have the optimal hyperplane
 
-$f(x) = {w^*}x+{b^*}$
+$f(x) = {w^\*}x+{b^\*}$
+
+In linear separable cases, the closest points to separating hyperplane are called **support vectors**. Thoses are the points where $y_i(wx_i+b)-1=0$(red line and green line in the picture). The distance between red line and green line is the margin, which is $\frac{2}{\lVert w \rVert}$. Support Vectors are the only points deciding the optimal separating hyperplane. That means if support vectors are moved, hyperplane is moved; if other points being moved or deleted, hyperplane is not moved. Because of that, SVM could be used on small data set since only a small part of set is being used.
+
+## Dual Problem and KKT
+
+
 
 
 —— Jennycs005 @ 10102020
