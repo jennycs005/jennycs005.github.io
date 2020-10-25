@@ -59,7 +59,7 @@ Since
 
 the furmula could be convert to:
 
-$\mathop{min}\limits_{ω,b} \frac{1}{2}{\lVert ω \rVert}^2$     (function 1)
+$\mathop{min}\limits_{ω,b} \frac{1}{2}{\lVert ω \rVert}^2$     (form 1)
 
 $s. t.  y_i(\frac{ω}{\lVert ω \rVert}x_i+\frac{b}{\lVert ω \rVert}) - 1> 0, i = 1, 2, ..., N$
 
@@ -71,14 +71,29 @@ In linear separable cases, the closest points to separating hyperplane are calle
 
 ## Conclusion
 
-Now we come to the conclusion of SVM algorithm in linear separable cases.
+Now we come to the summary of SVM algorithm in linearly separable cases.
 
-**Input:** Linear separable training dataset $T = {(x_1,y_1),(x_2,y_2),...(x_n,y_n)}$, for which $x_i \in X=R^n$, $y_i \in Y={-1, +1}, i = 1,2,...,N$
+**Input:** Linear separable training dataset $T = \{(x_1,y_1),(x_2,y_2),...(x_n,y_n)\}$, for which $x_i \in X=R^n$, $y_i \in Y=\{-1, +1\}, i = 1,2,...,N$
 
-**Output:** Maximum margin separating 
+**Output:** Maximum margin separating hyperplane and classify decision function
 
+* Step 1: Construct and solve constrained optimization problem:
 
+$\mathop{min}\limits_{ω,b} \frac{1}{2}{\lVert ω \rVert}^2$     (form 1)
 
+$s. t.  y_i(\frac{ω}{\lVert ω \rVert}x_i+\frac{b}{\lVert ω \rVert}) - 1> 0, i = 1, 2, ..., N$
+
+Get optimal solution $ω^\*, b^\*$.
+
+* Step 2: Get separating hyperplane:
+
+$ω^\* x_i + b^\* = 0$
+
+classify decision function:
+
+$f(x) = sign(ω^\* x_i + b^\*)$
+
+In my next post, we're goint to talk about non-linearly separable cases.
 
 —— Jennycs005 @ 10102020
 
