@@ -4,7 +4,7 @@ title:      "Support Vector Machine 2"
 subtitle:   "Non-Linearly Separable Cases "
 date:       2020-10-24 12:00:00
 author:     "Jennycs005"
-header-img: "img/post-bg-SVM-background.jpg"
+header-img: "img/post-bg-SVM-background2.jpg"
 catalog: true
 tags:
     - ML
