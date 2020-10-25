@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Support Vector Machine 1"
-subtitle:   "Linear SVM -- Trying so hard to find largest margin"
+subtitle:   "Linearly Separable Cases "
 date:       2020-10-10 12:00:00
 author:     "Jennycs005"
 header-img: "img/post-bg-SVM-background.jpg"
@@ -69,11 +69,13 @@ $f(x) = {ω^\*}x+{b^\*}$
 
 In linear separable cases, the closest points to separating hyperplane are called **support vectors**. Thoses are the points where $y_i(ωx_i+b)-1=0$(red line and green line in the picture). The distance between red line and green line is the margin, which is $\frac{2}{\lVert ω \rVert}$. Support Vectors are the only points deciding the optimal separating hyperplane. That means if support vectors are moved, hyperplane is moved; if other points being moved or deleted, hyperplane is not moved. Because of that, SVM could be used on small dataset since only a small part of set is being used.
 
-## Dual Problem
+## Conclusion
 
-Now we're going to discuss how to solve the function 1 above. It is a convex quadratic programming problem, which is easy to solve by standard methods. We solve it by geting the results of it's dual problem.
+Now we come to the conclusion of SVM algorithm in linear separable cases.
 
+**Input:** Linear separable training dataset $T = {(x_1,y_1),(x_2,y_2),...(x_n,y_n)}$, for which $x_i \in X=R^n$, $y_i \in Y={-1, +1}, i = 1,2,...,N$
 
+**Output:** Maximum margin separating 
 
 
 
