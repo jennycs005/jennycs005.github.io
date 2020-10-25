@@ -93,7 +93,7 @@ classify decision function:
 
 $f(x) = sign(ω^\* x_i + b^\*)$
 
-In my [next post] (https://jennycs005.github.io/2020/10/24/Support-Vector-Machine1/), we're goint to talk about non-linearly separable cases.
+In my [next post](https://jennycs005.github.io/2020/10/24/Support-Vector-Machine1/), we're goint to talk about non-linearly separable cases.
 
 —— Jennycs005 @ 10102020
 
