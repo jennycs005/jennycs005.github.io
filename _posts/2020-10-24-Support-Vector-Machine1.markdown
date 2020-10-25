@@ -26,7 +26,7 @@ tags:
 
 ## Introduction
 
-**Support Vector Machine (SVM)** is a supervised machine learning algorithm and it can be used for both classification and regression challenges. However, it is mostly used in classification problems. SVM is highly preferred by many as it produces significant accuracy with less computation power. The basic idea of SVM is to find the optimal separating hyperplane in feature space which maximizes the margin and then categorize training data set into different groups. It can also be considered as a convex quadratic programming problem. We're going to discuss linear SVM in this post, and we suppose the feature space is linear separatable.
+From [last post](https://jennycs005.github.io/2020/10/10/Support-Vector-Machine/), we got the basic algorithm of SVM in linearly separable cases. In this post, we are going to take one step further and talk about SVM in non-linearly separable cases. In that case, it's hard to find a hyperplane, even if we got one, it maybe a result of overfitting and has very bad generalization ability. So we introduce kernel functon and kernel tricks to convert input space into a high dimensional feature space which makes it possible to get a optimal separating hyperplane.
 
 ## Functional and Geometric Margin
 ![img](/img/in-post/post-2020-10-10-SVM/post-SVM-01.png)
