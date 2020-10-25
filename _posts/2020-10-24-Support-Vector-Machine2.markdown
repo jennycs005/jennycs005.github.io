@@ -4,7 +4,7 @@ title:      "Support Vector Machine 3"
 subtitle:   "SVM with outliers "
 date:       2020-10-24 12:00:00
 author:     "Jennycs005"
-header-img: "img/post-bg-SVM-background.jpg"
+header-img: "img/post-bg-SVM-background3.jpg"
 catalog: true
 tags:
     - ML
