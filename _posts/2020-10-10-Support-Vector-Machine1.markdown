@@ -78,7 +78,7 @@ In linearly separable cases, the closest points to separating hyperplane are cal
 
 Now we come to the summary of SVM algorithm in linearly separable cases.
 
-**Input:** Linearly separable training dataset $T = \{(x_1,y_1),(x_2,y_2),...(x_n,y_n)\}$, for which $x_i \in X=R^n$, $y_i \in Y=\{-1, +1\}, i = 1,2,...,N$
+**Input:** Linearly separable training dataset $T = \lbrace(x_1,y_1),(x_2,y_2),...(x_n,y_n)\rbrace$, for which $x_i \in X=R^n$, $y_i \in Y=\lbrace-1, +1\rbrace, i = 1,2,...,N$
 
 **Output:** Maximum margin separating hyperplane and classify decision function
 
