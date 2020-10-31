@@ -26,7 +26,7 @@ tags:
 
 ## Introduction
 
-**Support Vector Machine (SVM)** is a supervised machine learning algorithm and it can be used for both classification and regression challenges. However, it is mostly used in classification problems. SVM is highly preferred by many as it produces significant accuracy with less computation power. The basic idea of SVM is to find the optimal separating hyperplane in feature space which maximizes the margin and then categorize training data set into different groups. It can also be considered as a convex quadratic programming problem. We're going to discuss linear SVM in this post, and we suppose the feature space is linear separatable.
+**Support Vector Machine (SVM)** is a supervised machine learning algorithm and it can be used for both classification and regression challenges. However, it is mostly used in classification problems. SVM is highly preferred by many as it produces significant accuracy with less computation power. The basic idea of SVM is to find the optimal separating hyperplane in feature space which maximizes the margin and then categorize training data set into different groups. It can also be considered as a convex quadratic programming problem. We're going to discuss linear SVM in this post, and we suppose the feature space is linearly separatable.
 
 ## Functional and Geometric Margin
 ![img](/img/in-post/post-2020-10-10-SVM/post-SVM-01.png)
@@ -45,6 +45,7 @@ For any point $(x_i, y_i)$ in feature space, $\lvert ω{x_i}+b\rvert$ is the dis
 
 Scalling functional margin by $\lVert ω \rVert$, we got **geometric margin** $γ_i = y_i(\frac{ω}{\lVert ω \rVert}x_i+\frac{b}{\lVert ω \rVert})$. The geometric margin is showing not only if the point is properly classified or not, but also the magnitude of that distance in term of units of $\lVert ω \rVert$. The smallest geometric margin(this margin is from data points in feature space to separating hyperplane) is half of the largest margin(this margin is the distance between red line and green line) we're looking for.
 
+## Largest Margin
 
 To get the largest margin, the problem could be descriped as follow:
 
@@ -55,7 +56,7 @@ $s. t.  y_i(\frac{ω}{\lVert ω \rVert}x_i+\frac{b}{\lVert ω \rVert}) > γ, i =
 Since 
 * $γ = \frac{\hat γ}{\lVert ω \rVert}$ 
 * $(λω, λb)$ is the same hyperplane with $(ω, b)$, set functional margin $\hat γ = 1$ 
-* $\mathop{max} \frac{1}{\lVert ω \rVert}$ is equal to $\mathop{min} \frac{1}{2} \lVert ω \rVert$
+* $\mathop{max} \frac{1}{\lVert ω \rVert}$ is equal to $\mathop{min} \frac{1}{2} \lVert ω \rVert$, we add $\frac{1}{2}$ in front of it for further calculation Convenience
 
 the furmula could be convert to:
 
@@ -63,17 +64,21 @@ $\mathop{min}\limits_{ω,b} \frac{1}{2}{\lVert ω \rVert}^2$     (form 1)
 
 $s. t.  y_i(\frac{ω}{\lVert ω \rVert}x_i+\frac{b}{\lVert ω \rVert}) - 1> 0, i = 1, 2, ..., N$
 
-We got $ω^\*, b^\*$ from the function above and have the optimal hyperplane
+We got $ω^\*, b^\*$ from the function above and have the **optimal hyperplane**
 
-$f(x) = {ω^\*}x+{b^\*}$
+$0 = {ω^\*}x+{b^\*}$
 
-In linear separable cases, the closest points to separating hyperplane are called **support vectors**. Thoses are the points where $y_i(ωx_i+b)-1=0$(red line and green line in the picture). The distance between red line and green line is the margin, which is $\frac{2}{\lVert ω \rVert}$. Support Vectors are the only points deciding the optimal separating hyperplane. That means if support vectors are moved, hyperplane is moved; if other points being moved or deleted, hyperplane is not moved. Because of that, SVM could be used on small dataset since only a small part of set is being used.
+**decision function**
+
+$f(x) = sign({ω^\*}x+{b^\*})$
+
+In linearly separable cases, the closest points to separating hyperplane are called **support vectors**. Thoses are the points where $y_i(ωx_i+b)-1=0$(red line and green line in the picture). The distance between red line and green line is the margin, which is $\frac{2}{\lVert ω \rVert}$. Support Vectors are the only points decided the optimal separating hyperplane, which means that SVM could be used on small dataset since only a small part of set is being used.
 
 ## Conclusion
 
 Now we come to the summary of SVM algorithm in linearly separable cases.
 
-**Input:** Linear separable training dataset $T = \{(x_1,y_1),(x_2,y_2),...(x_n,y_n)\}$, for which $x_i \in X=R^n$, $y_i \in Y=\{-1, +1\}, i = 1,2,...,N$
+**Input:** Linearly separable training dataset $T = \{(x_1,y_1),(x_2,y_2),...(x_n,y_n)\}$, for which $x_i \in X=R^n$, $y_i \in Y=\{-1, +1\}, i = 1,2,...,N$
 
 **Output:** Maximum margin separating hyperplane and classify decision function
 
