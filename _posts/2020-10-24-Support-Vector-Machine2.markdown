@@ -29,7 +29,7 @@ tags:
 From [last post](https://jennycs005.github.io/2020/10/10/Support-Vector-Machine1/), we got the basic algorithm of SVM in linearly separable cases. In this post, we are going to take one step further and talk about SVM in non-linearly separable cases. In that case, it's hard to find a hyperplane, even if we got one, it maybe a result of overfitting and has very bad generalization ability(Like shown in the figure below). So we introduce kernel functon and kernel tricks to convert input space into a high dimensional feature space which makes it possible to get a optimal separating hyperplane.
 ![img](/img/in-post/post-2020-10-10-SVM/post-SVM-01.png)
 
-## Functional and Geometric Margin
+## Lagrange multiplier and Lagrangian function
 
 We have the dicision function now, and now we're going to talk about how to come to the solutions of it.
 
@@ -37,11 +37,18 @@ $\mathop{min}\limits_{ω,b} \frac{1}{2}{\lVert ω \rVert}^2$ (form 1)
 
 $s. t. y_i(\frac{ω}{\lVert ω \rVert}x_i+\frac{b}{\lVert ω \rVert}) - 1> 0, i = 1, 2, ..., N$
 
-This is an example of a quadratic programming problem. In order to solve this constrained optimization problem, we introduce **Lagrange multiplier $α_n\geqslant$**, giving the Lagrangian function 
+This is an example of a quadratic programming problem. In order to solve this constrained optimization problem, we introduce **Lagrange multiplier $α_n\geqslant 0$**, giving the **Lagrangian function**
 
-$L(ω, b, α) = \frac{1}{2}{\lVert ω \rVert}^2 + \Sigma α_i(1-y_i(ω^Tx_i+b))$ (form 2)
+$L(ω, b, α) = \frac{1}{2}{\lVert ω \rVert}^2 + \Sigma α_i(1-y_i(ω^Tx_i+b))$ **(form 2)**
 
-Minimizing with respect to $ω$ and $b$, and then maximizing with respect to $α$
+Setting the derivatives of $L(ω, b, α)$ with respect to $ω$ and $b$ equal to zero, we obtain the following two conditions:
+
+$ω = \Sigma α_iy_ix_i$
+                         **(form 3)**
+$0 = \Sigma α_iy_i$
+
+
+, and then maximizing with respect to $α$
 
 We take 2-dimensional feature space for example. In the figure above, we have feature $X_1$ and feature $X_2$, and now we want to classify the input data into two groups(Of course SVM is capable of milti-class classification, we'll talk about this in another post). It's very obviously that we can simply draw a line to seperate them, and define the line as a 'hyperplane', but it looks like there are many hyperplanes could be drawn. 
 
