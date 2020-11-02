@@ -53,14 +53,15 @@ $\tilde{L}(α) = \Sigma α_i - \frac{1}{2}\Sigma\Sigma α_i α_j y_i y_j k(x_i, 
 
 with respect to subject to the constraints
 
-$α_i\geqslant 0 \$
+* $α_i\geqslant 0 \$
 
-$\Sigma α_i y_i =0$
+* $\Sigma α_i y_i =0$
 
 In order to classify new data points using the trained model, we evaluated the sign of $y(x)$ defined by SVM1-form-1 $f(x)=ωx+b$, this can be expressed in terms of the parameters $α$ and the kernel function by substituting for $ω$ using SVM2-form-2 to give
 
-$y(x) = \Sigma α_iy-i{x_i}^Tx_j +b $
-$y(x) = \Sigma α_iy-ik(x_i,x_j) +b$  **(SVM2-form-4)**
+$y(x) = \Sigma α_i y_i{x_i}^Tx_j +b$
+
+$y(x) = \Sigma α_i y_ik(x_i,x_j) +b$  **(SVM2-form-4)**
 
 ## KKT conditions
 
@@ -72,31 +73,27 @@ A constrainted optimization of this form satisfies the **Karush-Kuhn-Tucker cond
 
 * $α_i(y_if(x_i)-1)=0$
 
-
+So for every data points, either $α_i = 0$ or $y_if(x_i)=1$. Any points for which $α_i = 0$ will not appear in the SVM2-form-4 and could be discard. The remaining data points which safisfied $y_if(x_i)=1$ are the **support vectors** we mentioned in last post.
 
 ## Conclusion
 
-Now we come to the summary of SVM algorithm in linearly separable cases.
+Having solved the quadratic programming problem and found a value for $α$, we can then determine the value of the threshold parameter $b$ by noting that any support vector $x_i$ satifies $y_if(x_i) = 1$. Using SVM2-form-4, this gives 
 
-**Input:** Linear separable training dataset $T = \lbrace(x_1,y_1),(x_2,y_2),...(x_n,y_n)\rbrace$, for which $x_i \in X=R^n$, $y_i \in Y=\brace-1, +1\rbrace, i = 1,2,...,N$
+$y_j(\Sigma α_iy_ik(x_i,x_j)+b)=1$ **(SVM2-form-5)**
 
-**Output:** Maximum margin separating hyperplane and classify decision function
+where n denotes the set of inices of the support vectors.
 
-* Step 1: Construct and solve constrained optimization problem:
+we first multiply through by $y_i$, making use of $(t_n)^2 = 1$, and then averaging these equations over all support vectors and solving for $b$ to give 
 
-$\mathop{min}\limits_{ω,b} \frac{1}{2}{\lVert ω \rVert}^2$     **(SVM1-form-2)**
+$b = \frac{1}{N_n} \Sigma (y_i -\Sigma α_iy_ik(x_i,x_j))$
 
-$s. t.  y_i(\frac{ω}{\lVert ω \rVert}x_i+\frac{b}{\lVert ω \rVert}) - 1> 0, i = 1, 2, ..., N$
+where $N_n$ is the total number of the support vectors.
 
-Get optimal solution $ω^\*, b^\*$.
 
-* Step 2: Get separating hyperplane:
 
-$ω^\* x_i + b^\* = 0$
 
-classify decision function:
 
-$f(x) = sign(ω^\* x_i + b^\*)$
+
 
 In my [next post](https://jennycs005.github.io/2020/10/24/Support-Vector-Machine3/), we're goint to talk about non-linearly separable cases.
 
