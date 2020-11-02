@@ -43,9 +43,9 @@ $L(ω, b, α) = \frac{1}{2}{\lVert ω \rVert}^2 + \Sigma α_i(1-y_i(ω^Tx_i+b))$
 
 Setting the derivatives of $L(ω, b, α)$ with respect to $ω$ and $b$ equal to zero, we obtain the following two conditions:
 
-$ω = \Sigma α_iy_ix_i$  **(SVM2-form-2)**
+* $ω = \Sigma α_iy_ix_i$  **(SVM2-form-2)**
 
-$0 = \Sigma α_iy_i$
+* $0 = \Sigma α_iy_i$
 
 Eliminating  $ω$ and $b$ from $L(ω, b, α)$ using these conditions then giving the dual representation of the maximum margin problem in which we maximize
 
