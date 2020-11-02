@@ -33,7 +33,7 @@ From [last post](https://jennycs005.github.io/2020/10/10/Support-Vector-Machine1
 
 We have the dicision function now, and now we're going to talk about how to come to the solutions of it.
 
-$\mathop{min}\limits_{ω,b} \frac{1}{2}{\lVert ω \rVert}^2$ (form 1)
+$\mathop{min}\limits_{ω,b} \frac{1}{2}{\lVert ω \rVert}^2$ **(form 1)**
 
 $s. t. y_i(\frac{ω}{\lVert ω \rVert}x_i+\frac{b}{\lVert ω \rVert}) - 1> 0, i = 1, 2, ..., N$
 
@@ -43,12 +43,15 @@ $L(ω, b, α) = \frac{1}{2}{\lVert ω \rVert}^2 + \Sigma α_i(1-y_i(ω^Tx_i+b))$
 
 Setting the derivatives of $L(ω, b, α)$ with respect to $ω$ and $b$ equal to zero, we obtain the following two conditions:
 
-$ω = \Sigma α_iy_ix_i$
-                         **(form 3)**
+$ω = \Sigma α_iy_ix_i$  **(form 3)**
 $0 = \Sigma α_iy_i$
 
+Eliminating  $ω$ and $b$ from $L(ω, b, α)$ suing these conditions then gives the dual representation of the maximum margin problem in which we maximize
 
-, and then maximizing with respect to $α$
+$L(α)$
+
+
+
 
 We take 2-dimensional feature space for example. In the figure above, we have feature $X_1$ and feature $X_2$, and now we want to classify the input data into two groups(Of course SVM is capable of milti-class classification, we'll talk about this in another post). It's very obviously that we can simply draw a line to seperate them, and define the line as a 'hyperplane', but it looks like there are many hyperplanes could be drawn. 
 
