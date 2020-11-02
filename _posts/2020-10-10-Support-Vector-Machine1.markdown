@@ -39,7 +39,9 @@ The idea is to choose the one with the **largest margin**. The larger the margin
 
 ![img](/img/in-post/post-2020-10-10-SVM/post-SVM-02.png)
 
-Let's discuss it in depth. We define the hyperplane as $f(x)=ωx+b$. when $f(x)=0$, it means $x$ is exactly on the hyperplane; when $f(x)>0$, then $x$ is on the positive category, where $f(x)=1$; when $f(x)<0$, $x$ is on the negative category, where $f(x)=-1$. 
+Let's discuss it in depth. We define the hyperplane as $f(x)=ωx+b$ **(SVM1-form-1)**
+
+when $f(x)=0$, it means $x$ is exactly on the hyperplane; when $f(x)>0$, then $x$ is on the positive category, where $f(x)=1$; when $f(x)<0$, $x$ is on the negative category, where $f(x)=-1$. 
 
 For any point $(x_i, y_i)$ in feature space, $\lvert ω{x_i}+b\rvert$ is the distance from $x_i$ to the hyperplane. Let's consider the sign of $y_i(ω{x_i}+b)$, if it's positive, that means the point $(x_i, y_i)$ is properly classifed. $\hat γ_i = y_i(ω{x_i}+b)$ is called the **functional margin**, it's just a testing function that tell us whether the point is properly classified or not.
 
@@ -60,7 +62,7 @@ Since
 
 the furmula could be convert to:
 
-$\mathop{min}\limits_{ω,b} \frac{1}{2}{\lVert ω \rVert}^2$     (form 1)
+$\mathop{min}\limits_{ω,b} \frac{1}{2}{\lVert ω \rVert}^2$     **(SVM1-form-2)**
 
 $s. t.  y_i(\frac{ω}{\lVert ω \rVert}x_i+\frac{b}{\lVert ω \rVert}) - 1> 0, i = 1, 2, ..., N$
 
@@ -84,7 +86,7 @@ Now we come to the summary of SVM algorithm in linearly separable cases.
 
 * Step 1: Construct and solve constrained optimization problem:
 
-$\mathop{min}\limits_{ω,b} \frac{1}{2}{\lVert ω \rVert}^2$     (form 1)
+$\mathop{min}\limits_{ω,b} \frac{1}{2}{\lVert ω \rVert}^2$     **(SVM1-form-2)**
 
 $s. t.  y_i(\frac{ω}{\lVert ω \rVert}x_i+\frac{b}{\lVert ω \rVert}) - 1> 0, i = 1, 2, ..., N$
 
