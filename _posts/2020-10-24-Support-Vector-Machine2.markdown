@@ -66,9 +66,11 @@ $y(x) = \Sigma α_iy-ik(x_i,x_j) +b$  **(SVM2-form-4)**
 
 A constrainted optimization of this form satisfies the **Karush-Kuhn-Tucker conditions**, which in this case requires the following three properties hold
 
-$α_i\geqslant 0$
-$y_if(x_i)-1\geqslant 0$
-$α_i(y_if(x_i)-1)=0$
+* $α_i\geqslant 0$
+
+* $y_if(x_i)-1\geqslant 0$
+
+* $α_i(y_if(x_i)-1)=0$
 
 
 
