@@ -75,8 +75,6 @@ A constrainted optimization of this form satisfies the **Karush-Kuhn-Tucker cond
 
 So for every data points, either $α_i = 0$ or $y_if(x_i)=1$. Any points for which $α_i = 0$ will not appear in the SVM2-form-4 and could be discard. The remaining data points which safisfied $y_if(x_i)=1$ are the **support vectors** we mentioned in last post.
 
-## Conclusion
-
 Having solved the quadratic programming problem and found a value for $α$, we can then determine the value of the threshold parameter $b$ by noting that any support vector $x_i$ satifies $y_if(x_i) = 1$. Using SVM2-form-4, this gives 
 
 $y_j(\Sigma α_iy_ik(x_i,x_j)+b)=1$ **(SVM2-form-5)**
@@ -89,6 +87,13 @@ $b = \frac{1}{N_n} \Sigma (y_i -\Sigma α_iy_ik(x_i,x_j))$
 
 where $N_n$ is the total number of the support vectors.
 
+## Conclusion
+
+In summary, the SVM algorithm in non-linearly separable cases could be expressed as follows:
+
+**Input**:
+**Output**:
+
 
 
 
@@ -97,4 +102,4 @@ where $N_n$ is the total number of the support vectors.
 
 In my [next post](https://jennycs005.github.io/2020/10/24/Support-Vector-Machine3/), we're goint to talk about non-linearly separable cases.
 
-—— Jennycs005 @ 10102020
+—— Jennycs005 @ 10242020
