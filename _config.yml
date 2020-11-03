@@ -24,7 +24,7 @@ github_username:     jennycs005
 #twitter_username:   huxpro
 #facebook_username:  huxpro
 linkedin_username:   chunjie-jenny-xu-6b2519134
-youtube_username:   徐春杰jenny
+youtube_username:   jennycs005
 
 
 
@@ -44,8 +44,12 @@ anchorjs: true                          # if you want to customize anchor. check
 # from PR#40, to support local preview for Jekyll 3.0
 # make sure you have this gem installed
 # `$ gem install jekyll-paginate`
-plugins: [jekyll-paginate]
+#plugins: [jekyll-paginate]
 
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap
 
 
 # Markdown settings
@@ -68,7 +72,7 @@ kramdown:
 disqus_username: jennycs005
 
 # Netease settings
-netease_comment: false
+netease_comment: true
 
 
 
