@@ -8,8 +8,8 @@ keyword: "Jennycs005, Data Science, Machine Learning, Artificial Intelligence, P
 #url: "https://huangxuan.me"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
-#duoshuo_username: Chunjie Xu
-disqus_username: Chunjie Xu
+#duoshuo_username: ChunjieXu
+disqus_username: chunjiexu
 
 markdown: kramdown
 
