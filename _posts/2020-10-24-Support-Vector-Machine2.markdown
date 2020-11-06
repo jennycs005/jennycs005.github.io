@@ -127,6 +127,6 @@ classify decision function:
 $f(x) = sign(\Sigma α_i^\* y_i K(x_i, x_j)+ b^\*)$
 
 
-In my [next post](https://jennycs005.github.io/2020/10/24/Support-Vector-Machine3/), we're goint to talk about non-linearly separable cases.
+In my [next post](https://jennycs005.github.io/2020/10/24/Support-Vector-Machine3/), we're goint to talk about non-linear SVM.
 
 —— Jennycs005 @ 10242020
