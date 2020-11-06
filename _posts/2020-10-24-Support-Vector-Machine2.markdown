@@ -111,7 +111,7 @@ $s. t.  \Sigma α_i y_i = 0$
 
 $0 \leqslant α_i \leqslant C, i = 1, 2, ..., N$
 
-Get optimal solution $α^\*=((α_1)^\*,α_2^\*,...,α_N^\*)^T$.
+Get optimal solution $α^\*=(α_1^\*,α_2^\*,...,α_N^\*)^T$.
 
 * Step 2: 
 
