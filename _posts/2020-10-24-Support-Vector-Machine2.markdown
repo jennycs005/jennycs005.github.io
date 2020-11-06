@@ -92,8 +92,32 @@ where $N_n$ is the total number of the support vectors.
 
 In summary, the SVM algorithm in non-linearly separable cases could be expressed as follows:
 
-**Input**:
+**Input**: 
+
+Linearly separable training dataset $T = \lbrace(x_1,y_1),(x_2,y_2),...(x_n,y_n)\rbrace$, for which $x_i \in X=R^n$, $y_i \in Y=\lbrace-1, +1\rbrace, i = 1,2,...,N$
+
+
 **Output**:
+
+Maximum margin separating hyperplane and classify decision function
+
+* Step 1: Construct and solve constrained optimization problem:
+
+$\mathop{min}\limits_{ω,b} \frac{1}{2}\frac{1}{2}\Sigma\Sigma α_i α_j y_i y_j k(x_i, x_j)-\Sigma α_i$     **(SVM1-form-2)**
+
+$s. t.  \Sigma α_i y_i = 0$
+
+$0 \leq α_i \geqslant C, i = 1, 2, ..., N$
+
+Get optimal solution $ω^\*, b^\*$.
+
+* Step 2: Get separating hyperplane:
+
+$ω^\* x_i + b^\* = 0$
+
+classify decision function:
+
+$f(x) = sign(ω^\* x_i + b^\*)$
 
 
 
