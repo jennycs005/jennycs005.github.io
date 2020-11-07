@@ -40,7 +40,7 @@ $s. t. y_i(\frac{ω}{\lVert ω \rVert}x_i+\frac{b}{\lVert ω \rVert}) - 1> 0, i 
 
 This is an example of a quadratic programming problem. In order to solve this constrained optimization problem, we introduce **Lagrange multiplier $α_i\geqslant 0$**, giving the **Lagrangian function**
 
-$L(ω, b, α) = \frac{1}{2}{\lVert ω \rVert}^2 + \sum_{i=1}^{N} α_i(1-y_i(ω^Tx_i+b))$ **(SVM2-form-1)**
+$L(ω, b, α) = \frac{1}{2}{\lVert ω \rVert}^2 + \sum\limits_{i=1}^{N} α_i(1-y_i(ω^Tx_i+b))$ **(SVM2-form-1)**
 
 Setting the derivatives of $L(ω, b, α)$ with respect to $ω$ and $b$ equal to zero, we obtain the following two conditions:
 
