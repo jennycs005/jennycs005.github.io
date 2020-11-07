@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Support Vector Machine 2"
-subtitle:   "Non-Linearly Separable Cases "
+subtitle:   "Non-Linear Separable Cases "
 date:       2020-10-24 12:00:00
 author:     "Jennycs005"
 header-img: "img/post-bg-SVM-background2.jpg"
@@ -26,13 +26,13 @@ tags:
 
 ## Introduction
 
-From [last post](https://jennycs005.github.io/2020/10/10/Support-Vector-Machine1/), we got the basic algorithm of SVM in linearly separable cases. In this post, we are going to take one step further and talk about SVM in non-linearly separable cases. In that case, it's hard to find a hyperplane, even if we got one, it maybe a result of overfitting and has very bad generalization ability(Like shown in the figure below). So we introduce kernel functon and kernel tricks to convert input space into a high dimensional feature space which makes it possible to get a optimal separating hyperplane.
+From [last post](https://jennycs005.github.io/2020/10/10/Support-Vector-Machine1/), we got the basic algorithm of SVM in linear separable cases. In this post, we are going to take one step further and talk about SVM in non-linear separable cases. In that case, it's hard to find a hyperplane in the orginal input space, even if we got one, it maybe a result of overfitting and has very bad generalization ability(Like shown in the figure below). So we introduce kernel functon and kernel tricks to convert input space into a high dimensional feature space which makes it possible to get an optimal separating hyperplane.
 ![img](/img/in-post/post-2020-10-24-SVM2/post-SVM2-01.png)
 
 
 ## Lagrange multiplier and Lagrangian function
 
-We have the dicision function now, and now we're going to talk about how to come to the solutions of it.
+We begin with discussing the solutions of SVM1-form-2 from last post. 
 
 $\mathop{min}\limits_{ω,b} \frac{1}{2}{\lVert ω \rVert}^2$ **(SVM1-form-2)**
 
@@ -40,7 +40,7 @@ $s. t. y_i(\frac{ω}{\lVert ω \rVert}x_i+\frac{b}{\lVert ω \rVert}) - 1> 0, i 
 
 This is an example of a quadratic programming problem. In order to solve this constrained optimization problem, we introduce **Lagrange multiplier $α_i\geqslant 0$**, giving the **Lagrangian function**
 
-$L(ω, b, α) = \frac{1}{2}{\lVert ω \rVert}^2 + \sum α_i(1-y_i(ω^Tx_i+b))$ **(SVM2-form-1)**
+$L(ω, b, α) = \frac{1}{2}{\lVert ω \rVert}^2 + \sum_{i=1}^{N} α_i(1-y_i(ω^Tx_i+b))$ **(SVM2-form-1)**
 
 Setting the derivatives of $L(ω, b, α)$ with respect to $ω$ and $b$ equal to zero, we obtain the following two conditions:
 
