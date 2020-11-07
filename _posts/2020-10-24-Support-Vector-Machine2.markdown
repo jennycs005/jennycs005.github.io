@@ -44,25 +44,25 @@ $L(ω, b, α) = \frac{1}{2}{\lVert ω \rVert}^2 + \sum\limits_{i=1}^{N} α_i(1-y
 
 Setting the derivatives of $L(ω, b, α)$ with respect to $ω$ and $b$ equal to zero, we obtain the following two conditions:
 
-* $ω = \Sigma α_iy_ix_i$  **(SVM2-form-2)**
+* $ω = \sum\limits_{i=1}^{N} α_iy_ix_i$  **(SVM2-form-2)**
 
-* $0 = \Sigma α_iy_i$
+* $0 = \sum\limits_{i=1}^{N} α_iy_i$
 
 Eliminating  $ω$ and $b$ from $L(ω, b, α)$ using these conditions then giving the dual representation of the maximum margin problem in which we maximize
 
-$\tilde{L}(α) = \Sigma α_i - \frac{1}{2}\Sigma\Sigma α_i α_j y_i y_j k(x_i, x_j)$ **(SVM2-form-3)**
+$\tilde{L}(α) = \sum\limits_{i=1}^{N} α_i - \frac{1}{2}\sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N} α_i α_j y_i y_j k(x_i, x_j)$ **(SVM2-form-3)**
 
 with respect to subject to the constraints
 
 * $α_i\geqslant 0 \$
 
-* $\Sigma α_i y_i =0$
+* $\sum\limits_{i=1}^{N} α_i y_i =0$
 
 In order to classify new data points using the trained model, we evaluated the sign of $y(x)$ defined by SVM1-form-1 $f(x)=ωx+b$, this can be expressed in terms of the parameters $α$ and the kernel function by substituting for $ω$ using SVM2-form-2 to give
 
-$y(x) = \Sigma α_i y_i{x_i}^Tx_j +b$
+$y(x) = \sum\limits_{i=1}^{N} α_i y_i{x_i}^Tx_j +b$
 
-$y(x) = \Sigma α_i y_ik(x_i,x_j) +b$  **(SVM2-form-4)**
+$y(x) = \sum\limits_{i=1}^{N} α_i y_ik(x_i,x_j) +b$  **(SVM2-form-4)**
 
 ## KKT conditions
 
