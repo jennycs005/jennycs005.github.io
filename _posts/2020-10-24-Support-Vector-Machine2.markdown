@@ -26,7 +26,7 @@ tags:
 
 ## Introduction
 
-From [last post](https://jennycs005.github.io/2020/10/10/Support-Vector-Machine1/), we got the basic algorithm of SVM in linear separable cases. In this post, we are going to take one step further and talk about SVM in non-linear separable cases. In that case, it's hard to find a hyperplane in the orginal input space, even if we got one, it maybe a result of overfitting and has very bad generalization ability(Like shown in the figure below). So we introduce kernel functon and kernel tricks to convert input space into a high dimensional feature space which makes it possible to get an optimal separating hyperplane.
+From [last post](https://jennycs005.github.io/2020/10/10/Support-Vector-Machine1/), we got the basic algorithm of SVM in linear separable cases. In this post, we are going to take one step further and talk about SVM in non-linear separable cases. In that case, it's hard to find a hyperplane in the orginal input space, even if we got one, it maybe a result of overfitting and has very bad generalization ability(Like shown in the figure below). So we introduce kernel functon and kernel tricks to convert input space into a high dimensional feature space, so the origenal non-linear separable problem now being convert to a linear separable problem and possible to find an optimal separating hyperplane.
 ![img](/img/in-post/post-2020-10-24-SVM2/post-SVM2-01.png)
 
 
@@ -46,11 +46,11 @@ Setting the derivatives of $L(ω, b, α)$ with respect to $ω$ and $b$ equal to 
 
 * $ω = \sum\limits_{i=1}^{N} α_iy_ix_i$  **(SVM2-form-2)**
 
-* $0 = \sum\limits_{i=1}^{N} α_iy_i$
+* $0 = \sum\limits_{i=1}^{N} α_iy_i$  **(SVM2-form-3)**
 
 Eliminating  $ω$ and $b$ from $L(ω, b, α)$ using these conditions then giving the dual representation of the maximum margin problem in which we maximize
 
-$\tilde{L}(α) = \sum\limits_{i=1}^{N} α_i - \frac{1}{2}\sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N} α_i α_j y_i y_j k(x_i, x_j)$ **(SVM2-form-3)**
+$\tilde{L}(α) = \sum\limits_{i=1}^{N} α_i - \frac{1}{2}\sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N} α_i α_j y_i y_j k(x_i, x_j)$ **(SVM2-form-4)**
 
 with respect to subject to the constraints
 
@@ -60,9 +60,13 @@ with respect to subject to the constraints
 
 In order to classify new data points using the trained model, we evaluated the sign of $y(x)$ defined by SVM1-form-1 $f(x)=ωx+b$, this can be expressed in terms of the parameters $α$ and the kernel function by substituting for $ω$ using SVM2-form-2 to give
 
-$y(x) = \sum\limits_{i=1}^{N} α_i y_i{x_i}^Tx_j +b$
+$y(x) = \sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N} α_i y_i{x_i}^Tx_j +b$,
 
-$y(x) = \sum\limits_{i=1}^{N} α_i y_ik(x_i,x_j) +b$  **(SVM2-form-4)**
+which could be written as:
+
+$y(x) = \sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N} α_i y_ik(x_i,x_j) +b$  **(SVM2-form-5)**
+
+
 
 ## KKT conditions
 
