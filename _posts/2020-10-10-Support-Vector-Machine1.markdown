@@ -65,7 +65,7 @@ The geometric margin is showing not only if the point is properly classified or 
 
 To get the largest margin, the problem could be descriped as follow:
 
-$\mathop{max}\limits_{ω,b} γ$ **(SVM1-form-4)**
+$\mathop{max}\limits_{ω,b} γ$                                            **(SVM1-form-5)**
 
 $s. t.  y_i(\frac{ω}{\lVert ω \rVert}x_i+\frac{b}{\lVert ω \rVert}) > γ, i = 1, 2, ..., N$
 
@@ -78,35 +78,35 @@ Since
 
 the SVM1-form-4 could be convert to:
 
-$\mathop{min}\limits_{ω,b} \frac{1}{2}{\lVert ω \rVert}^2$     **(SVM1-form-5)**
+$\mathop{min}\limits_{ω,b} \frac{1}{2}{\lVert ω \rVert}^2$               **(SVM1-form-6)**
 
 $s. t.  y_i(\frac{ω}{\lVert ω \rVert}x_i+\frac{b}{\lVert ω \rVert}) - 1> 0, i = 1, 2, ..., N$
 
-We got $ω^\*, b^\*$ from the function above and have the **optimal hyperplane**
+When we got $ω^\*, b^\*$ from the function above and have the **optimal hyperplane**
 
-$0 = {ω^\*}x+{b^\*}$  **(SVM1-form-6)**
+$0 = {ω^\*}x+{b^\*}$                                                    **(SVM1-form-7)**
 
-**decision function**
+also **decision function**
 
-$f(x) = sign({ω^\*}x+{b^\*})$  **(SVM1-form-7)**
+$f(x) = sign({ω^\*}x+{b^\*})$                                           **(SVM1-form-8)**
 
 ## Lagrange multiplier and Lagrangian function
 
-We begin with discussing the solutions of SVM1-form-2 from last post. 
-
-$\mathop{min}\limits_{ω,b} \frac{1}{2}{\lVert ω \rVert}^2$ **(SVM1-form-2)**
-
-$s. t. y_i(\frac{ω}{\lVert ω \rVert}x_i+\frac{b}{\lVert ω \rVert}) - 1> 0, i = 1, 2, ..., N$
+Now we talk about how to get the solutions of SVM1-form-5. 
 
 This is an example of a quadratic programming problem. In order to solve this constrained optimization problem, we introduce **Lagrange multiplier $α_i\geqslant 0$**, giving the **Lagrangian function**
 
-$L(ω, b, α) = \frac{1}{2}{\lVert ω \rVert}^2 + \sum\limits_{i=1}^{N} α_i(1-y_i(ω^Tx_i+b))$ **(SVM2-form-1)**
+$L(ω, b, α) = \frac{1}{2}{\lVert ω \rVert}^2 + \sum\limits_{i=1}^{N} α_i(1-y_i(ω^Tx_i+b))$ **(SVM1-form-9)**
 
-Setting the derivatives of $L(ω, b, α)$ with respect to $ω$ and $b$ equal to zero, we obtain the following two conditions:
+According to Lagrange duality, the dual problem of origenal primary problem is:
 
-* $ω = \sum\limits_{i=1}^{N} α_iy_ix_i$  **(SVM2-form-2)**
+$\mathop{max}\limits_{α}\mathop{min}limits_{ω,b}L(ω, b, α)$            
 
-* $0 = \sum\limits_{i=1}^{N} α_iy_i$  **(SVM2-form-3)**
+To get $\mathop{min}limits_{ω,b}L(ω, b, α)$: setting the derivatives of $L(ω, b, α)$ with respect to $ω$ and $b$ equal to zero, we obtain the following two conditions:
+
+* $ω = \sum\limits_{i=1}^{N} α_iy_ix_i$                                 **(SVM1-form-10)**
+
+* $0 = \sum\limits_{i=1}^{N} α_iy_i$                                    **(SVM1-form-11)**
 
 Eliminating  $ω$ and $b$ from $L(ω, b, α)$ using these conditions then giving the dual representation of the maximum margin problem in which we maximize
 
