@@ -146,7 +146,7 @@ where $N$ denotes the set of inices of the support vectors.
 
 we first multiply through by $y_i$, making use of $(y_n)^2 = 1$, and then averaging these equations over all support vectors and solving for $b$ to give 
 
-$b^\* = y_i - \sum\limits_(i=1)^{N}α_i^\*y_i(x_i\bullet x_j)$  **(SVM1-form-18)**
+$b^\* = y_i - \sum\limits_{i=1}^{N}α_i^\*y_i(x_i\bullet x_j)$  **(SVM1-form-18)**
 
 where $N$ is the total number of the support vectors.
 
@@ -160,7 +160,7 @@ Now we come to the summary of SVM algorithm in linear separable cases.
 
 * Step 1: Construct and solve constrained optimization problem:
 
-$\mathop{min}\limits_{α} \frac{1}{2}\sum\limits_(i=1)^{N}\sum\limits_(j=1)^{N}α_iα_jy_iy_j(x_i\bullet x_j)-\sum\limits_{i=1}^{N}α_i$    
+$\mathop{min}\limits_{α} \frac{1}{2}\sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N}α_iα_jy_iy_j(x_i\bullet x_j)-\sum\limits_{i=1}^{N}α_i$    
 
 $s. t. \sum\limits_{i=1}^{N} α_i y_i =0$  
 
@@ -174,7 +174,7 @@ $ω^\*=\sum\limits_{i=1}^{N} α_i^\*y_ix_i$
 
 choose $α_j^\* > 0$, calculate
 
-$b^\*=y_i - \sum\limits_(i=1)^{N}α_i^\*y_i(x_i\bullet x_j)$
+$b^\*=y_i - \sum\limits_{i=1}^{N}α_i^\*y_i(x_i\bullet x_j)$
 
 * Step 3:Get separating hyperplane:
 
