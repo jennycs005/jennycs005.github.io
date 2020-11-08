@@ -140,7 +140,7 @@ So for every data points, either $α_i = 0$ or $y_if(x_i)=1$. Any points for whi
 
 Having solved the quadratic programming problem and found a value for $α^\*$, we can then determine the value of the threshold parameter $b^\*$ by noting that any support vector $x_i$ satifies $y_if(x_i) = 1$. This gives 
 
-$y_j(\sum\limits_{i=1}^{N} α_iy_i(x_i\bullet x_j)+b)=1$ **(SVM1-form-17)**
+$y_j(\sum\limits_{i=1}^{N} α_i^\*y_i(x_i\bullet x_j)+b)=1$ **(SVM1-form-17)**
 
 where $N$ denotes the set of inices of the support vectors.
 
