@@ -114,7 +114,7 @@ $\mathop{max}\limits_{α}L(ω, b, α)=\tilde{L}(α) = \sum\limits_{i=1}^{N} α_i
 
 Using it's dual problem again we have
 
-$\mathop{min}\limits_{a}\frac{1}{2}\sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N} α_i α_j y_i y_j(x_i, x_j)-\sum\limits_{i=1}^{N} α_i$   **(SVM1-form-13)**
+$\mathop{min}\limits_{a}\frac{1}{2}\sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N} α_i α_j y_i y_j(x_i\bullet x_j)-\sum\limits_{i=1}^{N} α_i$   **(SVM1-form-13)**
 
 with respect to subject to the constraints
 
