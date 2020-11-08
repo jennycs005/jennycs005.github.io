@@ -43,40 +43,52 @@ Let's discuss it in depth. We define the hyperplane as
 
 $f(x)=ωx+b$  **(SVM1-form-1)**
 
-when $f(x)=0$, it means $x$ is exactly on the hyperplane; when $f(x)>0$, then $x$ is on the positive category, where $f(x)=1$; when $f(x)<0$, $x$ is on the negative category, where $f(x)=-1$. 
+For any point $(x_i, y_i)$ in feature space, $\lvert ω{x_i}+b\rvert$ is the distance from $x_i$ to the hyperplane. So the hyperplane is where $f(x)=ωx+b=0$. The red line and green line are the boundaries where $f(x)=1$ and $f(x)=-1$. And the data points beyond those boundaries are categorized to either positive or negative groups. Thus we got the decision function:
 
-For any point $(x_i, y_i)$ in feature space, $\lvert ω{x_i}+b\rvert$ is the distance from $x_i$ to the hyperplane. Let's consider the sign of $y_i(ω{x_i}+b)$, if it's positive, that means the point $(x_i, y_i)$ is properly classifed. $\hat γ_i = y_i(ω{x_i}+b)$ is called the **functional margin**, it's just a testing function that tell us whether the point is properly classified or not.
+$f(x)=sign(ωx+b)$ **(SVM1-form-2)**
 
-Scalling functional margin by $\lVert ω \rVert$, we got **geometric margin** $γ_i = y_i(\frac{ω}{\lVert ω \rVert}x_i+\frac{b}{\lVert ω \rVert})$. The geometric margin is showing not only if the point is properly classified or not, but also the magnitude of that distance in term of units of $\lVert ω \rVert$. The smallest geometric margin(this margin is from data points in feature space to separating hyperplane) is half of the largest margin(this margin is the distance between red line and green line) we're looking for.
+Next step is to find the value of $ω$ and $b$.
+
+Now let's consider the sign of $y_i(ω{x_i}+b)$. If it's positive, that means the point $(x_i, y_i)$ is properly classifed($y_i$ and $(ω{x_i}+b)$ are both positive or negative at the same time. So we denote 
+
+$\hat γ_i = y_i(ω{x_i}+b)$ **(SVM1-form-3)**
+
+as the **functional margin**, it's just a testing function that tell us whether the point is properly classified or not.
+
+Scalling functional margin by $\lVert ω \rVert$, we got **geometric margin** 
+
+$γ_i = y_i(\frac{ω}{\lVert ω \rVert}x_i+\frac{b}{\lVert ω \rVert})$. **(SVM1-form-4)**
+
+The geometric margin is showing not only if the point is properly classified or not, but also the magnitude of that distance in term of units of $\lVert ω \rVert$. This is import because $(λω, λb)$ is the same hyperplane with $(ω, b)$, but they have different functional margin. The smallest geometric margin(this margin is from data points in feature space to separating hyperplane) is half of the largest margin(this margin is the distance between red line and green line) we're looking for.
 
 ## Largest Margin
 
 To get the largest margin, the problem could be descriped as follow:
 
-$\mathop{max}\limits_{ω,b} γ$ **(SVM1-form-2)**
+$\mathop{max}\limits_{ω,b} γ$ **(SVM1-form-4)**
 
 $s. t.  y_i(\frac{ω}{\lVert ω \rVert}x_i+\frac{b}{\lVert ω \rVert}) > γ, i = 1, 2, ..., N$
 
 Since 
 * $γ = \frac{\hat γ}{\lVert ω \rVert}$ 
-* $(λω, λb)$ is the same hyperplane with $(ω, b)$, set functional margin $\hat γ = 1$ 
-* $\mathop{max} \frac{1}{\lVert ω \rVert}$ is equal to $\mathop{min} \frac{1}{2} \lVert ω \rVert$, we add $\frac{1}{2}$ in front of it for further calculation Convenience
 
-the SVM1-form-2 could be convert to:
+* $(λω, λb)$ is the same hyperplane with $(ω, b)$, and we set functional margin $\hat γ = 1$ 
 
-$\mathop{min}\limits_{ω,b} \frac{1}{2}{\lVert ω \rVert}^2$     **(SVM1-form-3)**
+* $\mathop{max} \frac{1}{\lVert ω \rVert}$ is equal to $\mathop{min} \lVert ω \rVert$, and we add $\frac{1}{2}$ in front of it for further calculation convenience
+
+the SVM1-form-4 could be convert to:
+
+$\mathop{min}\limits_{ω,b} \frac{1}{2}{\lVert ω \rVert}^2$     **(SVM1-form-5)**
 
 $s. t.  y_i(\frac{ω}{\lVert ω \rVert}x_i+\frac{b}{\lVert ω \rVert}) - 1> 0, i = 1, 2, ..., N$
 
 We got $ω^\*, b^\*$ from the function above and have the **optimal hyperplane**
 
-$0 = {ω^\*}x+{b^\*}$
+$0 = {ω^\*}x+{b^\*}$  **(SVM1-form-6)**
 
 **decision function**
 
-$f(x) = sign({ω^\*}x+{b^\*})$
-
-In linearly separable cases, the closest points to separating hyperplane are called **support vectors**. Thoses are the points where $y_i(ωx_i+b)-1=0$(red line and green line in the picture). The distance between red line and green line is the margin, which is $\frac{2}{\lVert ω \rVert}$. Support Vectors are the only points decided the optimal separating hyperplane, which means that SVM could be used on small dataset since only a small part of set is being used.
+$f(x) = sign({ω^\*}x+{b^\*})$  **(SVM1-form-7)**
 
 ## Lagrange multiplier and Lagrangian function
 
