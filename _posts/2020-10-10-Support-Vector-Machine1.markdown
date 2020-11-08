@@ -90,7 +90,7 @@ also **decision function**
 
 $f(x) = sign({ω^\*}x+{b^\*})$                                           **(SVM1-form-8)**
 
-## Lagrangian function and dual problem
+## Lagrangian Function and Dual Problem
 
 Now we talk about how to get the solutions of SVM1-form-5. 
 
@@ -126,6 +126,8 @@ In order to classify new data points using the trained model, we evaluated the s
 
 $y(x) = \sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N} α_i y_i(x_i,x_j) +b$  **(SVM1-form-16)**
 
+## KKT Conditions and Support Vectors
+
 A constrainted optimization of this form satisfies the [**Karush-Kuhn-Tucker conditions**](https://en.wikipedia.org/wiki/Karush%E2%80%93Kuhn%E2%80%93Tucker_conditions, which in this case requires the following three properties hold
 
 * $α_i\geqslant 0$
@@ -142,15 +144,15 @@ $y_j(\Sigma α_iy_ik(x_i,x_j)+b)=1$ **(SVM2-form-5)**
 
 where n denotes the set of inices of the support vectors.
 
-we first multiply through by $y_i$, making use of $(t_n)^2 = 1$, and then averaging these equations over all support vectors and solving for $b$ to give 
+we first multiply through by $y_i$, making use of $(y_n)^2 = 1$, and then averaging these equations over all support vectors and solving for $b$ to give 
 
-$b = \frac{1}{N_n} \Sigma (y_i -\Sigma α_iy_ik(x_i,x_j))$
+$b^* = \frac{1}{N_n} \Sigma (y_i -\Sigma α_iy_ik(x_i,x_j))$
 
 where $N_n$ is the total number of the support vectors.
 
 ## Conclusion
 
-Now we come to the summary of SVM algorithm in linearly separable cases.
+Now we come to the summary of SVM algorithm in linear separable cases.
 
 **Input:** Linearly separable training dataset $T = \lbrace(x_1,y_1),(x_2,y_2),...(x_n,y_n)\rbrace$, for which $x_i \in X=R^n$, $y_i \in Y=\lbrace-1, +1\rbrace, i = 1,2,...,N$
 
