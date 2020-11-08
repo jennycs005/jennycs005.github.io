@@ -158,7 +158,7 @@ Now we come to the summary of SVM algorithm in linear separable cases.
 
 **Output:** Maximum margin separating hyperplane and classify decision function
 
-* Step 1: Construct and solve constrained optimization problem:
+* **Step 1**: Construct and solve constrained optimization problem:
 
 $\mathop{min}\limits_{α} \frac{1}{2}\sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N}α_iα_jy_iy_j(x_i\bullet x_j)-\sum\limits_{i=1}^{N}α_i$    
 
@@ -168,7 +168,7 @@ $α_i\geqslant 0  , i = 1, 2, ..., N$
 
 Get optimal solution $α^\*=(α_1^\*,α_2^\*,...α_N^\*)^T$.
 
-* Step 2: Calculate 
+* **Step 2**: Calculate 
 
 $ω^\*=\sum\limits_{i=1}^{N} α_i^\*y_ix_i$
 
@@ -176,7 +176,7 @@ choose $α_j^\* > 0$, calculate
 
 $b^\*=y_i - \sum\limits_{i=1}^{N}α_i^\*y_i(x_i\bullet x_j)$
 
-* Step 3:Get separating hyperplane:
+* **Step 3**:Get separating hyperplane:
 
 $ω^\* x_i + b^\* = 0$
 
