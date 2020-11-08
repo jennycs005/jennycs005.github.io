@@ -140,13 +140,13 @@ So for every data points, either $α_i = 0$ or $y_if(x_i)=1$. Any points for whi
 
 Having solved the quadratic programming problem and found a value for $α^\*$, we can then determine the value of the threshold parameter $b^\*$ by noting that any support vector $x_i$ satifies $y_if(x_i) = 1$. This gives 
 
-$y_j(\Sigma\limits_{i=1}^{N} α_iy_i(x_i\bullet x_j)+b)=1$ **(SVM1-form-17)**
+$y_j(\sum\limits_{i=1}^{N} α_iy_i(x_i\bullet x_j)+b)=1$ **(SVM1-form-17)**
 
 where $N$ denotes the set of inices of the support vectors.
 
 we first multiply through by $y_i$, making use of $(y_n)^2 = 1$, and then averaging these equations over all support vectors and solving for $b$ to give 
 
-$b^\* = y_i - \Sigma\limits_(i=1)^{N}α_i^\*y_i(x_i\bullet x_j)$  **(SVM1-form-18)**
+$b^\* = y_i - \sum\limits_(i=1)^{N}α_i^\*y_i(x_i\bullet x_j)$  **(SVM1-form-18)**
 
 where $N$ is the total number of the support vectors.
 
@@ -154,13 +154,13 @@ where $N$ is the total number of the support vectors.
 
 Now we come to the summary of SVM algorithm in linear separable cases.
 
-**Input:** Linearly separable training dataset $T = \lbrace(x_1,y_1),(x_2,y_2),...(x_n,y_n)\rbrace$, for which $x_i \in X=R^n$, $y_i \in Y=\lbrace-1, +1\rbrace, i = 1,2,...,N$
+**Input:** Linear separable training dataset $T = \lbrace(x_1,y_1),(x_2,y_2),...(x_n,y_n)\rbrace$, for which $x_i \in X=R^n$, $y_i \in Y=\lbrace-1, +1\rbrace, i = 1,2,...,N$
 
 **Output:** Maximum margin separating hyperplane and classify decision function
 
 * Step 1: Construct and solve constrained optimization problem:
 
-$\mathop{min}\limits_{α} \frac{1}{2}\Sigma\limits_(i=1)^{N}\Sigma\limits_(j=1)^{N}α_iα_jy_iy_j(x_i\bullet x_j)-\Sigma\limits_{i=1}^{N}α_i$     **(SVM1-form-2)**
+$\mathop{min}\limits_{α} \frac{1}{2}\sum\limits_(i=1)^{N}\sum\limits_(j=1)^{N}α_iα_jy_iy_j(x_i\bullet x_j)-\sum\limits_{i=1}^{N}α_i$    
 
 $s. t. \sum\limits_{i=1}^{N} α_i y_i =0$  
 
@@ -174,7 +174,7 @@ $ω^\*=\sum\limits_{i=1}^{N} α_i^\*y_ix_i$
 
 choose $α_j^\* > 0$, calculate
 
-$b^\*=y_i - \Sigma\limits_(i=1)^{N}α_i^\*y_i(x_i\bullet x_j)$
+$b^\*=y_i - \sum\limits_(i=1)^{N}α_i^\*y_i(x_i\bullet x_j)$
 
 * Step 3:Get separating hyperplane:
 
