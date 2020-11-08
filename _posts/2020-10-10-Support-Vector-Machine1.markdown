@@ -110,7 +110,7 @@ First we calculate $\mathop{min}limits_{ω,b}L(ω, b, α)$: setting the derivati
 
 Eliminating  $ω$ and $b$ from $L(ω, b, α)$ using these conditions then giving the dual representation of the maximum margin problem in which we maximize
 
-$\mathop{max}\limits_{α}L(ω, b, α)=\tilde{L}(α) = \sum\limits_{i=1}^{N} α_i - \frac{1}{2}\sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N} α_i α_j y_i y_j(x_i, x_j)$  **(SVM1-form-12)**
+$\mathop{max}\limits_{α}L(ω, b, α)=\tilde{L}(α) = \sum\limits_{i=1}^{N} α_i - \frac{1}{2}\sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N} α_i α_j y_i y_j(x_i\bullet x_j)$  **(SVM1-form-12)**
 
 Using it's dual problem again we have
 
@@ -118,17 +118,17 @@ $\mathop{min}\limits_{a}\frac{1}{2}\sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N} α
 
 with respect to subject to the constraints
 
-* $α_i\geqslant 0 \$     **(SVM1-form-14)**
+* $α_i\geqslant 0 $     **(SVM1-form-14)**
 
 * $\sum\limits_{i=1}^{N} α_i y_i =0$       **(SVM1-form-15)**
 
 In order to classify new data points using the trained model, we evaluated the sign of $y(x)$ defined by SVM1-form-1 $f(x)=ωx+b$, this can be expressed in terms of the parameters $α$ and the kernel function by substituting for $ω$ using SVM1-form-10 to give
 
-$y(x) = \sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N} α_i y_i(x_i,x_j) +b$  **(SVM1-form-16)**
+$y(x) = \sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N} α_i y_i(x_i\bullet x_j) +b$  **(SVM1-form-16)**
 
 ## KKT Conditions and Support Vectors
 
-A constrainted optimization of this form satisfies the [**Karush-Kuhn-Tucker conditions**](https://en.wikipedia.org/wiki/Karush%E2%80%93Kuhn%E2%80%93Tucker_conditions, which in this case requires the following three properties hold
+A constrainted optimization of this form satisfies the [**Karush-Kuhn-Tucker conditions**](https://en.wikipedia.org/wiki/Karush%E2%80%93Kuhn%E2%80%93Tucker_conditions), which in this case requires the following three properties hold
 
 * $α_i\geqslant 0$
 
@@ -138,17 +138,17 @@ A constrainted optimization of this form satisfies the [**Karush-Kuhn-Tucker con
 
 So for every data points, either $α_i = 0$ or $y_if(x_i)=1$. Any points for which $α_i = 0$ will not appear in the SVM1-form-16 and could be discard. The remaining data points which safisfied $y_if(x_i)=1$ are the **support vectors**, those are the vectors that determine the hyperplane and decision boundaries. That's why SVM got it's name and the reason why it could be used on small dataset and deliver promising result.
 
-Having solved the quadratic programming problem and found a value for $α$, we can then determine the value of the threshold parameter $b$ by noting that any support vector $x_i$ satifies $y_if(x_i) = 1$. Using SVM2-form-4, this gives 
+Having solved the quadratic programming problem and found a value for $α^\*$, we can then determine the value of the threshold parameter $b^\*$ by noting that any support vector $x_i$ satifies $y_if(x_i) = 1$. This gives 
 
-$y_j(\Sigma α_iy_ik(x_i,x_j)+b)=1$ **(SVM2-form-5)**
+$y_j(\Sigma\limits_{i=1}^{N} α_iy_i(x_i\bullet x_j)+b)=1$ **(SVM1-form-17)**
 
-where n denotes the set of inices of the support vectors.
+where $N$ denotes the set of inices of the support vectors.
 
 we first multiply through by $y_i$, making use of $(y_n)^2 = 1$, and then averaging these equations over all support vectors and solving for $b$ to give 
 
-$b^* = \frac{1}{N_n} \Sigma (y_i -\Sigma α_iy_ik(x_i,x_j))$
+$b^\* = y_i - \Sigma\limits_(i=1)^{N}α_i^\*y_i(x_i\bullet x_j)$  **(SVM1-form-18)**
 
-where $N_n$ is the total number of the support vectors.
+where $N$ is the total number of the support vectors.
 
 ## Conclusion
 
@@ -160,13 +160,23 @@ Now we come to the summary of SVM algorithm in linear separable cases.
 
 * Step 1: Construct and solve constrained optimization problem:
 
-$\mathop{min}\limits_{ω,b} \frac{1}{2}{\lVert ω \rVert}^2$     **(SVM1-form-2)**
+$\mathop{min}\limits_{α} \frac{1}{2}\Sigma\limits_(i=1)^{N}\Sigma\limits_(j=1)^{N}α_iα_jy_iy_j(x_i\bullet x_j)-\Sigma\limits_{i=1}^{N}α_i$     **(SVM1-form-2)**
 
-$s. t.  y_i(\frac{ω}{\lVert ω \rVert}x_i+\frac{b}{\lVert ω \rVert}) - 1> 0, i = 1, 2, ..., N$
+$s. t. \sum\limits_{i=1}^{N} α_i y_i =0$  
 
-Get optimal solution $ω^\*, b^\*$.
+$α_i\geqslant 0  , i = 1, 2, ..., N$
 
-* Step 2: Get separating hyperplane:
+Get optimal solution $α^\*=(α_1^\*,α_2^\*,...α_N^\*)^T$.
+
+* Step 2: Calculate 
+
+$ω^\*=\sum\limits_{i=1}^{N} α_i^\*y_ix_i$
+
+choose $α_j^\* > 0$, calculate
+
+$b^\*=y_i - \Sigma\limits_(i=1)^{N}α_i^\*y_i(x_i\bullet x_j)$
+
+* Step 3:Get separating hyperplane:
 
 $ω^\* x_i + b^\* = 0$
 
@@ -174,7 +184,7 @@ classify decision function:
 
 $f(x) = sign(ω^\* x_i + b^\*)$
 
-In my [next post](https://jennycs005.github.io/2020/10/24/Support-Vector-Machine2/), we're goint to talk about non-linearly separable cases.
+In my [next post](https://jennycs005.github.io/2020/10/24/Support-Vector-Machine2/), we're goint to talk about non-linear separable cases.
 
 —— Jennycs005 @ 10102020
 
