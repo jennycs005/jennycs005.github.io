@@ -41,7 +41,7 @@ The idea is to choose the one with the **largest margin**. The larger the margin
 
 Let's discuss it in depth. We define the hyperplane as 
 
-$f(x)=ωx+b$  **(SVM1-form-1)**
+**$f(x)=ωx+b$**  **(SVM1-form-1)**
 
 For any point $(x_i, y_i)$ in feature space, $\lvert ω{x_i}+b\rvert$ is the distance from $x_i$ to the hyperplane. So the hyperplane is where $f(x)=ωx+b=0$. The red line and green line are the boundaries where $f(x)=1$ and $f(x)=-1$. And the data points beyond those boundaries are categorized to either positive or negative groups. Thus we got the decision function:
 
