@@ -90,19 +90,19 @@ also **decision function**
 
 $f(x) = sign({ω^\*}x+{b^\*})$                                           **(SVM1-form-8)**
 
-## Lagrange multiplier and Lagrangian function
+## Lagrangian function and dual problem
 
 Now we talk about how to get the solutions of SVM1-form-5. 
 
 This is an example of a quadratic programming problem. In order to solve this constrained optimization problem, we introduce **Lagrange multiplier $α_i\geqslant 0$**, giving the **Lagrangian function**
 
-$L(ω, b, α) = \frac{1}{2}{\lVert ω \rVert}^2 + \sum\limits_{i=1}^{N} α_i(1-y_i(ω^Tx_i+b))$ **(SVM1-form-9)**
+$L(ω, b, α) = \frac{1}{2}{\lVert ω \rVert}^2 + \sum\limits_{i=1}^{N} α_i(1-y_i(ωx_i+b))$ **(SVM1-form-9)**
 
 According to Lagrange duality, the dual problem of origenal primary problem is:
 
 $\mathop{max}\limits_{α}\mathop{min}limits_{ω,b}L(ω, b, α)$            
 
-To get $\mathop{min}limits_{ω,b}L(ω, b, α)$: setting the derivatives of $L(ω, b, α)$ with respect to $ω$ and $b$ equal to zero, we obtain the following two conditions:
+First we calculate $\mathop{min}limits_{ω,b}L(ω, b, α)$: setting the derivatives of $L(ω, b, α)$ with respect to $ω$ and $b$ equal to zero, we obtain the following two conditions:
 
 * $ω = \sum\limits_{i=1}^{N} α_iy_ix_i$                                 **(SVM1-form-10)**
 
@@ -110,27 +110,23 @@ To get $\mathop{min}limits_{ω,b}L(ω, b, α)$: setting the derivatives of $L(ω
 
 Eliminating  $ω$ and $b$ from $L(ω, b, α)$ using these conditions then giving the dual representation of the maximum margin problem in which we maximize
 
-$\tilde{L}(α) = \sum\limits_{i=1}^{N} α_i - \frac{1}{2}\sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N} α_i α_j y_i y_j k(x_i, x_j)$ **(SVM2-form-4)**
+$\mathop{max}\limits_{α}L(ω, b, α)=\tilde{L}(α) = \sum\limits_{i=1}^{N} α_i - \frac{1}{2}\sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N} α_i α_j y_i y_j(x_i, x_j)$  **(SVM1-form-12)**
+
+Using it's dual problem again we have
+
+$\mathop{min}\limits_{a}\frac{1}{2}\sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N} α_i α_j y_i y_j(x_i, x_j)-\sum\limits_{i=1}^{N} α_i$   **(SVM1-form-13)**
 
 with respect to subject to the constraints
 
-* $α_i\geqslant 0 \$
+* $α_i\geqslant 0 \$     **(SVM1-form-14)**
 
-* $\sum\limits_{i=1}^{N} α_i y_i =0$
+* $\sum\limits_{i=1}^{N} α_i y_i =0$       **(SVM1-form-15)**
 
-In order to classify new data points using the trained model, we evaluated the sign of $y(x)$ defined by SVM1-form-1 $f(x)=ωx+b$, this can be expressed in terms of the parameters $α$ and the kernel function by substituting for $ω$ using SVM2-form-2 to give
+In order to classify new data points using the trained model, we evaluated the sign of $y(x)$ defined by SVM1-form-1 $f(x)=ωx+b$, this can be expressed in terms of the parameters $α$ and the kernel function by substituting for $ω$ using SVM1-form-10 to give
 
-$y(x) = \sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N} α_i y_i{x_i}^Tx_j +b$,
+$y(x) = \sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N} α_i y_i(x_i,x_j) +b$  **(SVM1-form-16)**
 
-which could be written as:
-
-$y(x) = \sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N} α_i y_ik(x_i,x_j) +b$  **(SVM2-form-5)**
-
-
-
-## KKT conditions
-
-A constrainted optimization of this form satisfies the **Karush-Kuhn-Tucker conditions**, which in this case requires the following three properties hold
+A constrainted optimization of this form satisfies the [**Karush-Kuhn-Tucker conditions**](https://en.wikipedia.org/wiki/Karush%E2%80%93Kuhn%E2%80%93Tucker_conditions, which in this case requires the following three properties hold
 
 * $α_i\geqslant 0$
 
@@ -138,7 +134,7 @@ A constrainted optimization of this form satisfies the **Karush-Kuhn-Tucker cond
 
 * $α_i(y_if(x_i)-1)=0$
 
-So for every data points, either $α_i = 0$ or $y_if(x_i)=1$. Any points for which $α_i = 0$ will not appear in the SVM2-form-4 and could be discard. The remaining data points which safisfied $y_if(x_i)=1$ are the **support vectors** we mentioned in last post.
+So for every data points, either $α_i = 0$ or $y_if(x_i)=1$. Any points for which $α_i = 0$ will not appear in the SVM1-form-16 and could be discard. The remaining data points which safisfied $y_if(x_i)=1$ are the **support vectors**, those are the vectors that determine the hyperplane and decision boundaries. That's why SVM got it's name and the reason why it could be used on small dataset and deliver promising result.
 
 Having solved the quadratic programming problem and found a value for $α$, we can then determine the value of the threshold parameter $b$ by noting that any support vector $x_i$ satifies $y_if(x_i) = 1$. Using SVM2-form-4, this gives 
 
