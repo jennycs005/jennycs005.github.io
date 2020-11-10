@@ -38,7 +38,7 @@ Like the left image above, we couldn't divide original dataset into different gr
 
 ![img](/img/in-post/post-2020-10-24-SVM2/post-SVM2-02.png)
 
-The transformed data points are $z= ϕ(x)$
+The transformed data points are $z= \phi(x)$
 
 ## Common Kernels
 
