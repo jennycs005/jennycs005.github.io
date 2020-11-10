@@ -40,6 +40,10 @@ Like the left image above, we couldn't divide original dataset into different gr
 
 The transformed data points are $z= \phi(x)$
 
+If for all $x_i, x_j\in X=R^n$, function $k(x_i, x_j)$ satisfied $k(x_i,x_j)=\phi(x_i)\bullet \phi(x_j)$, then
+
+$k(x_i, x_j)$ is the kernel function.
+
 ## Common Kernels
 
 ## Conclusion
