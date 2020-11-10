@@ -44,6 +44,20 @@ If for all $x_i, x_j\in X=R^n$, function $k(x_i, x_j)$ satisfied $k(x_i,x_j)=\ph
 
 $k(x_i, x_j)$ is the kernel function.
 
+It's noteworth that in kernel trick, we only define kernel function, but not the mapping function, because usually  we can directly obtain $k(x_i, x_j)$ much easier than calculate from $\phi(x)$.
+
+Next let's talk about how to use kernel trick in SVM. It's notable that in linear saperable cases, it's only about the dot product of input examples, so we can replace the dot product of the objective function of linear separable model
+
+$\mathop{min}\limits_{α} \frac{1}{2}\sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N}α_iα_jy_iy_j(x_i\bullet x_j)-\sum\limits_{i=1}^{N}α_i$ 
+
+with kernel function $k(x_i,x_j)=\phi(x_i)\bullet \phi(x_j)$ and the objective function for non-linear SVM is
+
+$\mathop{min}\limits_{α} \frac{1}{2}\sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N}α_iα_jy_iy_jk(x_i, x_j)-\sum\limits_{i=1}^{N}α_i$
+
+the classify decision function is
+
+$f(x)=sign(\sum\limits_{i=1}^{N} α_i^\*y_ik(x,x_i)+b^\*)$
+
 ## Common Kernels
 
 ## Conclusion
