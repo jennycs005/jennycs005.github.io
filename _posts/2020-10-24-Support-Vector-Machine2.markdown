@@ -26,11 +26,19 @@ tags:
 
 ## Introduction
 
-From [last post](https://jennycs005.github.io/2020/10/10/Support-Vector-Machine1/), we got the basic algorithm of SVM in linear separable cases. In this post, we are going to take one step further and talk about SVM in non-linear separable cases. In that case, it's hard to find a hyperplane in the orginal input space, even if we got one, it maybe a result of overfitting and has very bad generalization ability(Like shown in the figures below). So we introduce kernel functon and kernel tricks to convert input space into a high dimensional feature space, so the origenal non-linear separable problem now being convert to a linear separable problem and possible to find an optimal separating hyperplane.
+From [last post](https://jennycs005.github.io/2020/10/10/Support-Vector-Machine1/), we obtained the basic algorithm of SVM in linear separable cases. In this post, we are going to take one step further and talk about SVM in non-linear separable cases. In thses cases, it's hard to find a hyperplane in the orginal input space, even if we got one, it maybe a result of overfitting and has very bad generalization ability(Like shown in the images below). So we introduce kernel functon and kernel trick to transform input space into a higher dimensional feature space, so the origenal non-linear separable problem now being transfered to a linear separable problem and possible to find an optimal separating hyperplane.
 ![img](/img/in-post/post-2020-10-24-SVM2/post-SVM2-01.png)
 
 
 ## Kernel Function and Kernel Tricks
+
+Let's talk about it in details.
+
+Like the left image above, we couldn't divide original dataset into different groups by a line(like in linear separable model), but there exists a curve to separate the data points. We transform it to linear separable case by applying the kernel trick in which adding one more dimention to the input space and get the new feature space. The hyperplane could be drawn as shown in the image below.
+
+![img](/img/in-post/post-2020-10-24-SVM2/post-SVM2-02.png)
+
+The transformed data points are $z= ϕ(x)$
 
 ## Common Kernels
 
