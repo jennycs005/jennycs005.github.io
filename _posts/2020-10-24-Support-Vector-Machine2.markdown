@@ -38,6 +38,10 @@ Like the left image above, we couldn't divide original dataset into different gr
 
 ![img](/img/in-post/post-2020-10-24-SVM2/post-SVM2-02.png)
 
+It's the same for the right image above, we use kernel function to transform the two-dimensional input space to three-dimensional feature space and could easily find the separating hyperplane.
+
+![img](/img/in-post/post-2020-10-24-SVM2/post-SVM2-03.png)
+
 The transformed data points are $z= \phi(x)$
 
 If for all $x_i, x_j\in X=R^n$, function $k(x_i, x_j)$ satisfied $k(x_i,x_j)=\phi(x_i)\bullet \phi(x_j)$, then
