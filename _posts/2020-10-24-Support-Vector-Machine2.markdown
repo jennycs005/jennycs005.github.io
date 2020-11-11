@@ -64,6 +64,8 @@ $f(x)=sign(\sum\limits_{i=1}^{N} α_i^\*y_ik(x,x_i)+b^\*)$
 
 ## Common Kernels
 
+We list some common used Kernels here 
+
 ## Conclusion
 
 In summary, the SVM algorithm in non-linearly separable cases could be expressed as follows:
