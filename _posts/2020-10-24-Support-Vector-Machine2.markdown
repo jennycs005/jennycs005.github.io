@@ -67,13 +67,14 @@ $f(x)=sign(\sum\limits_{i=1}^{N} α_i^\*y_ik(x,x_i)+b^\*)$
 We list some common used Kernels here:
 
 1. **Polynomial Kernel Function** 
-$K(x_i,x_j) = (x_i\bulletx_j+1)^d$ 
+$K(x_i,x_j) = (x_i\bullet x_j+1)^d$ 
 where d is the degree of the polynomial.
 
 2. **Gaussian Kernel Function** 
-$K(x_i,x_j) = exp\lgroup-\frac{\Arrowvertx_i-x_j\Arrowvert^\*}{2σ^2}\rgroup$
+$K(x_i,x_j) = exp\lgroup-\frac{\Arrowvert x_i - x_j\Arrowvert^2}{2σ^2}\rgroup$
 
 3. **Radial Basis Function (RBF)**
+$k(x_i,x_j) = exp\lgroup-\gamma\Arrowvert x_i -x_j \Arrowvert^2 \rgroup$
 
 4. **
 ## Conclusion
