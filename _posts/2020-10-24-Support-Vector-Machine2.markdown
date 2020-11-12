@@ -66,12 +66,12 @@ $f(x)=sign(\sum\limits_{i=1}^{N} α_i^\*y_ik(x,x_i)+b^\*)$
 
 We list some common used Kernels here:
 
-1. **Polynomial Kernel Function** 
+1. **Polynomial Kernel Function**. 
 
 $K(x_i,x_j) = (x_i\bullet x_j+1)^d$ 
 where d is the degree of the polynomial.
 
-2. **Gaussian Kernel Function** 
+2. **Gaussian Kernel Function**. 
 
 $K(x_i,x_j) = exp\lgroup-\frac{\Arrowvert x_i - x_j\Arrowvert^2}{2σ^2}\rgroup$
 
@@ -95,7 +95,7 @@ Training dataset $T = \lbrace(x_1,y_1),(x_2,y_2),...(x_n,y_n)\rbrace$, for which
 
 Classify decision function
 
-1. **Choose kernel function and parameter $c$, construct and solve constrained optimization problem**:
+1. **Choose kernel function and parameter $C$, construct and solve constrained optimization problem**:
 
 $\mathop{min}\limits_{\alpha}\frac{1}{2}\sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N} α_i α_j y_i y_j K(x_i, x_j)-\sum\limits_{i=1}^{N} α_i$     
 
