@@ -75,8 +75,11 @@ $K(x_i,x_j) = exp\lgroup-\frac{\Arrowvert x_i - x_j\Arrowvert^2}{2σ^2}\rgroup$
 
 3. **Radial Basis Function (RBF)**
 $k(x_i,x_j) = exp\lgroup-\gamma\Arrowvert x_i -x_j \Arrowvert^2 \rgroup$
+where $\gamma > 0$
 
-4. **
+4. **Sigmoid Kernel**(Tanh kernel)
+$k(x_i,x_j) = tanh(\beta x_i x_j + c)$
+
 ## Conclusion
 
 In summary, the SVM algorithm in non-linearly separable cases could be expressed as follows:
