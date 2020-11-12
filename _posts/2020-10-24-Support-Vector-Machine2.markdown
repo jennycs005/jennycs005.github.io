@@ -97,9 +97,9 @@ Classify decision function
 
 1. **Choose kernel function and parameter $c$, construct and solve constrained optimization problem**:
 
-$\mathop{min}\limits_{\alpha}\frac{1}{2}\Sigma\limits_{i=1}^{N}\Sigma\limits_{j=1}^{N} α_i α_j y_i y_j K(x_i, x_j)-\Sigma\limits_{i=1}^{N} α_i$     
+$\mathop{min}\limits_{\alpha}\frac{1}{2}\sum\limits_{i=1}^{N}\sum\limits_{j=1}^{N} α_i α_j y_i y_j K(x_i, x_j)-\sum\limits_{i=1}^{N} α_i$     
 
-$s. t.  \Sigma\limits_{i=1}^{N} α_i y_i = 0$
+$s. t.  \sum\limits_{i=1}^{N} α_i y_i = 0$
 
 $0 \leqslant α_i \leqslant C, i = 1, 2, ..., N$
 
@@ -107,12 +107,12 @@ Get optimal solution $α^\*=(α_1^\*,α_2^\*,...,α_N^\*)^T$.
 
 2. **Choose one of the positive component of $0 \leqslant (α_j)^T \leqslant C$, calculate**:
 
-$b^\* = y_i - \Sigma\limits_{i=1}^{N} α_i^\* y_i K(x_i, x_j)$
+$b^\* = y_i - \sum\limits_{i=1}^{N} α_i^\* y_i K(x_i, x_j)$
 
 
 3. **Obtain classify decision function**:
 
-$f(x) = sign(\Sigma\limits_{i=1}^{N} α_i^\* y_i K(x_i, x_j)+ b^\*)$
+$f(x) = sign(\sum\limits_{i=1}^{N} α_i^\* y_i K(x_i, x_j)+ b^\*)$
 
 
 In my [next post](https://jennycs005.github.io/2020/10/24/Support-Vector-Machine3/), we're goint to talk about SVM with outliers.
