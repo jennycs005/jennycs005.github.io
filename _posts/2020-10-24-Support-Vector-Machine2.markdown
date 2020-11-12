@@ -95,8 +95,6 @@ Training dataset $T = \lbrace(x_1,y_1),(x_2,y_2),...(x_n,y_n)\rbrace$, for which
 
 Classify decision function
 
-* Step 1: 
-
 1. **Choose kernel function and parameter $c$, construct and solve constrained optimization problem**:
 
 $\mathop{min}\limits_{\alpha}\frac{1}{2}\Sigma\limits_{i=1}^{N}\Sigma\limits_{j=1}^{N} α_i α_j y_i y_j K(x_i, x_j)-\Sigma\limits_{i=1}^{N} α_i$     
