@@ -64,8 +64,18 @@ $f(x)=sign(\sum\limits_{i=1}^{N} α_i^\*y_ik(x,x_i)+b^\*)$
 
 ## Common Kernels
 
-We list some common used Kernels here 
+We list some common used Kernels here:
 
+1. **Polynomial Kernel Function** 
+$K(x_i,x_j) = (x_i\bulletx_j+1)^d$ 
+where d is the degree of the polynomial.
+
+2. **Gaussian Kernel Function** 
+$K(x_i,x_j) = exp\lgroup-\frac{\Arrowvertx_i-x_j\Arrowvert^\*}{2σ^2}\rgroup$
+
+3. **Radial Basis Function (RBF)**
+
+4. **
 ## Conclusion
 
 In summary, the SVM algorithm in non-linearly separable cases could be expressed as follows:
