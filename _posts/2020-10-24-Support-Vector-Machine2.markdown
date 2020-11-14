@@ -66,6 +66,10 @@ $f(x)=sign(\sum\limits_{i=1}^{N} α_i^\*y_ik(x,x_i)+b^\*)$
 
 We list some common used Kernels here:
 
+* **Linear Kernel Function**.
+
+$K(x_i,x_j) = (x_i\bullet x_j)$
+
 * **Polynomial Kernel Function**. 
 
 $K(x_i,x_j) = (x_i\bullet x_j+1)^d$ 
@@ -83,6 +87,17 @@ where $\gamma > 0$
 * **Sigmoid Kernel**(also known as Tanh kernel)
 
 $k(x_i,x_j) = tanh(\beta x_i x_j + c)$
+
+My experience for choosing the proper Kernelfunction:
+
+Let's say D is the number of dimentional of feature space, N is the number of data records,
+
+* When D > N( which usually happens in Text classification problem), choose linear Kernel;
+
+* When D is small and N is not very big, choose RBF Kernel;
+
+* When D is small and N is very big, forget about SVM, choose Deep neural network.
+
 
 ## Conclusion
 
