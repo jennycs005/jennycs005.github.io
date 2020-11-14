@@ -26,9 +26,11 @@ tags:
 
 ## Introduction
 
+From [post SVM1](https://jennycs005.github.io/2020/10/10/Support-Vector-Machine1/) and [post SVM2](https://jennycs005.github.io/2020/10/24/Support-Vector-Machine2/), we know how to separate training data in linear and non-linear separable cases. But there's no outliers in both cases, which is most happened in real world. In this post, we will see how to deal with those outliers.
+
+## Soft Margin and Slack Variable
 
 
-## Functional and Geometric Margin
 ![img](/img/in-post/post-2020-10-10-SVM/post-SVM-01.png)
 
 
